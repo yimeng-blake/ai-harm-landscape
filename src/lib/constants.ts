@@ -37,3 +37,20 @@ export const NAV_ITEMS = [
   { href: "/topics", label: "Topics", icon: "🧠" },
   { href: "/heatmap", label: "Harm Matrix", icon: "🗂️" },
 ];
+
+// MIT Risk Domain colors (clean names without numbering)
+export const MIT_DOMAIN_COLORS: Record<string, string> = {
+  "Malicious Actors & Misuse": "#FF6B6B",
+  "AI system safety, failures, and limitations": "#4ECDC4",
+  "Discrimination and Toxicity": "#45B7D1",
+  "Misinformation": "#FFEAA7",
+  "Privacy & Security": "#DDA0DD",
+  "Human-Computer Interaction": "#96CEB4",
+  "Socioeconomic & Environmental Harms": "#F7DC6F",
+};
+
+export const DONUT_PALETTE = [
+  "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7",
+  "#DDA0DD", "#F7DC6F", "#FF8C94", "#85C1E9", "#82E0AA",
+  "#F8C471", "#BB8FCE", "#AED6F1", "#F5B7B1", "#A2D9CE",
+];

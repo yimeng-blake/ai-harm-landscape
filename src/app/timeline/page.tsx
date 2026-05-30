@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
+import TaxonomyBreakdown from "../../components/TaxonomyBreakdown";
 import { fetchJSON, TimelineRow, Incident } from "../../lib/data";
 import { CATEGORY_COLORS } from "../../lib/constants";
 
@@ -100,6 +101,15 @@ export default function TimelinePage() {
           style={{ width: "100%" }}
         />
       </div>
+
+      {/* Taxonomy Breakdown Donuts */}
+      {incidents.length > 0 && (
+        <div className="mb-6">
+          <TaxonomyBreakdown
+            incidents={incidents.filter((i) => i.year >= yearRange[0] && i.year <= yearRange[1])}
+          />
+        </div>
+      )}
 
       {/* Bar chart */}
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">

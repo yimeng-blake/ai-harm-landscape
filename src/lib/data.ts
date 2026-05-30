@@ -10,8 +10,15 @@ export interface Incident {
   harmed_parties: string[];
   "Risk Domain": string | null;
   "Risk Subdomain": string | null;
+  "Entity": string | null;
+  "Timing": string | null;
+  "Intent": string | null;
   "Known AI Goal": string | null;
   "Known AI Technology": string | null;
+  "Known AI Technical Failure": string | null;
+  "Harm Domain": string | null;
+  "Sector of Deployment": string | null;
+  "Autonomy Level": string | null;
   topic: number;
   topic_prob: number;
   umap_x: number;
