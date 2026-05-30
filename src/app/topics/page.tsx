@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
+import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, Incident, TopicInfo } from "../../lib/data";
 import { TOPIC_LABELS, TOPIC_COLORS } from "../../lib/constants";
 
@@ -106,22 +107,13 @@ export default function TopicsPage() {
           <h3 className="text-lg font-semibold mb-4">{TOPIC_LABELS[selectedTopic]}</h3>
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <h4 className="text-sm text-gray-400 mb-2">Key Terms</h4>
-              <PlotlyChart
-                data={[{
-                  x: selInfo.Representation.slice(0, 10).map((_, i) => 10 - i),
-                  y: selInfo.Representation.slice(0, 10),
-                  type: "bar", orientation: "h",
-                  marker: { color: TOPIC_COLORS[selectedTopic % TOPIC_COLORS.length] },
-                }]}
-                layout={{
-                  height: 280, margin: { l: 100, r: 10, t: 10, b: 30 },
-                  xaxis: { title: "Relevance", color: "#888" },
-                  yaxis: { autorange: "reversed", color: "#ccc" },
-                  paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { color: "#ccc" },
-                }}
-                config={{ displayModeBar: false }}
-                style={{ width: "100%" }}
+              <WordCloud
+                title="Topic Word Cloud"
+                words={extractWords(
+                  selIncidents.map((i) => `${i.title} ${i.description}`),
+                  35
+                )}
+                height={300}
               />
             </div>
             <div>

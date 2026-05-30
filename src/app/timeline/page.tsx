@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import TaxonomyBreakdown from "../../components/TaxonomyBreakdown";
+import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, TimelineRow, Incident } from "../../lib/data";
 import { CATEGORY_COLORS } from "../../lib/constants";
 
@@ -107,6 +108,22 @@ export default function TimelinePage() {
         <div className="mb-6">
           <TaxonomyBreakdown
             incidents={incidents.filter((i) => i.year >= yearRange[0] && i.year <= yearRange[1])}
+          />
+        </div>
+      )}
+
+      {/* Period Word Cloud */}
+      {incidents.length > 0 && (
+        <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
+          <WordCloud
+            title={`Dominant Terms (${yearRange[0]}–${yearRange[1]})`}
+            words={extractWords(
+              incidents
+                .filter((i) => i.year >= yearRange[0] && i.year <= yearRange[1])
+                .map((i) => `${i.title} ${i.description}`),
+              45
+            )}
+            height={280}
           />
         </div>
       )}

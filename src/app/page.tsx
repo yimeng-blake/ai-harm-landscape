@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import PlotlyChart from "../components/PlotlyChart";
+import WordCloud, { extractWords } from "../components/WordCloud";
 import { fetchJSON, Incident } from "../lib/data";
 
 export default function Home() {
@@ -75,6 +76,16 @@ export default function Home() {
           }}
           config={{ displayModeBar: false }}
           style={{ width: "100%" }}
+        />
+      </div>
+
+      {/* Hero Word Cloud */}
+      <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 mb-8">
+        <WordCloud
+          title="Most Frequent Terms Across All AI Incidents"
+          words={extractWords(incidents.map((i) => `${i.title} ${i.description}`), 50)}
+          height={260}
+          maxWords={50}
         />
       </div>
 
