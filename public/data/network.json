@@ -1,0 +1,6977 @@
+{
+  "nodes": [
+    {
+      "id": "high-school-students",
+      "count": 14,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 6,
+      "x": -0.12258403646504945,
+      "y": 0.964436855192026
+    },
+    {
+      "id": "chatbot-users",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 15,
+      "x": 0.8291563318174501,
+      "y": 0.3914801292184952
+    },
+    {
+      "id": "matryoshka",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.6181478596364388,
+      "y": -0.7530245245104127
+    },
+    {
+      "id": "sewell-setzer-iii",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.7916941231548438,
+      "y": 0.6083041947833618
+    },
+    {
+      "id": "united-states-government",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 16,
+      "x": 0.47470244448728516,
+      "y": 0.7718059621457587
+    },
+    {
+      "id": "cryptocurrency-investors",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 17,
+      "x": -0.6666474364456815,
+      "y": 0.7866714386424518
+    },
+    {
+      "id": "consumers",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 18,
+      "x": 0.7397454324395702,
+      "y": -0.6415901315807802
+    },
+    {
+      "id": "unknown-cybercriminals",
+      "count": 8,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.6556323934572656,
+      "y": -0.7041666923361285
+    },
+    {
+      "id": "meta-ai",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.8724137544222673,
+      "y": 0.058608086424763055
+    },
+    {
+      "id": "internal-revenue-service",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 19,
+      "x": -0.08087565970179046,
+      "y": -0.8915516611163334
+    },
+    {
+      "id": "general-public-of-bulgaria",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 20,
+      "x": 0.30297379656449436,
+      "y": -0.9037724018094974
+    },
+    {
+      "id": "ibm",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.7128256895380047,
+      "y": -0.537605033488169
+    },
+    {
+      "id": "patients",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 21,
+      "x": -0.07969162993587005,
+      "y": 0.9131388100675589
+    },
+    {
+      "id": "pro-russian-influencers",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.9079315612681113,
+      "y": -0.014701168751650269
+    },
+    {
+      "id": "department-of-veterans-affairs-(va)",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 22,
+      "x": 0.20036197624899124,
+      "y": -0.9586115176889274
+    },
+    {
+      "id": "stability-ai",
+      "count": 14,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 5,
+      "x": 0.22247432786284718,
+      "y": -0.9152294437146608
+    },
+    {
+      "id": "turnitin",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.6197983075187791,
+      "y": 0.8056829769727417
+    },
+    {
+      "id": "cybercriminals",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 2,
+      "x": 0.9283056159840307,
+      "y": 0.41139967459960686
+    },
+    {
+      "id": "none",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.3703820459892428,
+      "y": -0.8917636436278685
+    },
+    {
+      "id": "teachers",
+      "count": 17,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.8447766639886476,
+      "y": -0.3145918248178389
+    },
+    {
+      "id": "organizations",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 7,
+      "x": -0.9330607874180465,
+      "y": 0.024856190234247618
+    },
+    {
+      "id": "unknown-disinformation-actors",
+      "count": 21,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.78488257185219,
+      "y": 0.6396752613422493
+    },
+    {
+      "id": "gender-minority-groups",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 23,
+      "x": -0.6608998686504998,
+      "y": 0.6197888566948737
+    },
+    {
+      "id": "san-francisco-police-department",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 3,
+      "x": -0.7444496999910378,
+      "y": -0.2769307405518491
+    },
+    {
+      "id": "united-states-department-of-homeland-security",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.19229372114271534,
+      "y": -0.912648875832525
+    },
+    {
+      "id": "faceapp",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.9423396108624589,
+      "y": 0.36778245453336145
+    },
+    {
+      "id": "general-public-of-cyprus",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 24,
+      "x": 0.7060038409108764,
+      "y": 0.7413989111379755
+    },
+    {
+      "id": "general-public-of-nigeria",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 25,
+      "x": 0.1990120501249874,
+      "y": 0.9463823792642624
+    },
+    {
+      "id": "replika",
+      "count": 14,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.8301168056223339,
+      "y": -0.519172070825821
+    },
+    {
+      "id": "midjourney",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 5,
+      "x": -0.9470274230027894,
+      "y": -0.1946258145518133
+    },
+    {
+      "id": "laion",
+      "count": 8,
+      "roles": [
+        "developer",
+        "harmed"
+      ],
+      "community": 5,
+      "x": -0.3655350078188548,
+      "y": -0.8258852423335962
+    },
+    {
+      "id": "taiwanese-voters",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 26,
+      "x": 0.8599408337069905,
+      "y": -0.4145543726577604
+    },
+    {
+      "id": "department-for-work-and-pensions-(dwp)",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 27,
+      "x": -0.8564391900430566,
+      "y": 0.2174191538282184
+    },
+    {
+      "id": "journalistic-integrity",
+      "count": 15,
+      "roles": [
+        "harmed"
+      ],
+      "community": 28,
+      "x": -0.5731498782324591,
+      "y": 0.7743388681412742
+    },
+    {
+      "id": "government-of-russia-aligned-actors",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.4982574892561763,
+      "y": 0.8915220895840885
+    },
+    {
+      "id": "murat-ayfer",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.6301985832166622,
+      "y": -0.7331361834012375
+    },
+    {
+      "id": "portland-water-bureau",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 29,
+      "x": -0.924852017014109,
+      "y": 0.37339630477559377
+    },
+    {
+      "id": "starship-technologies",
+      "count": 8,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 30,
+      "x": 0.6123142215943675,
+      "y": 0.7044675455019079
+    },
+    {
+      "id": "tiktok",
+      "count": 28,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": 0.5588578962165287,
+      "y": -0.8263762627711281
+    },
+    {
+      "id": "irobot",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 31,
+      "x": -0.1470645956777289,
+      "y": -0.9416746824558728
+    },
+    {
+      "id": "unknown-generative-ai-developer",
+      "count": 3,
+      "roles": [
+        "developer"
+      ],
+      "community": 32,
+      "x": 0.936539783248342,
+      "y": 0.2213778017958889
+    },
+    {
+      "id": "unknown-deepfake-creators",
+      "count": 39,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.21821834738812315,
+      "y": -0.9466193492417094
+    },
+    {
+      "id": "chinese-citizens",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 33,
+      "x": -0.513091167576465,
+      "y": -0.7392203820598834
+    },
+    {
+      "id": "imran-khan",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 34,
+      "x": 0.7865452023777434,
+      "y": 0.4815372263574053
+    },
+    {
+      "id": "barack-obama",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 35,
+      "x": 0.9589970282533775,
+      "y": -0.1079437473703991
+    },
+    {
+      "id": "black-people",
+      "count": 8,
+      "roles": [
+        "harmed"
+      ],
+      "community": 36,
+      "x": -0.7854850619799502,
+      "y": 0.5410810781743652
+    },
+    {
+      "id": "musicians",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 37,
+      "x": 0.9237440118552173,
+      "y": 0.011620443659654282
+    },
+    {
+      "id": "disinformation-spreaders",
+      "count": 8,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.7402951245560976,
+      "y": -0.23446513222496573
+    },
+    {
+      "id": "ron-desantis's-presidential-campaign",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 3,
+      "x": 0.5532201888407611,
+      "y": -0.6497127733596176
+    },
+    {
+      "id": "us-citizenship-and-immigration-services",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": -0.8254183089085468,
+      "y": -0.5862159463728299
+    },
+    {
+      "id": "brouteurs",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.9466922952484902,
+      "y": 0.20611822088677148
+    },
+    {
+      "id": "alexandria-ocasio-cortez",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 38,
+      "x": -0.8519281913168703,
+      "y": -0.07723842337875038
+    },
+    {
+      "id": "linkedin-users",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 39,
+      "x": 0.8609782517837098,
+      "y": -0.494075268744368
+    },
+    {
+      "id": "unknown-deepfake-detection-technology-developers",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 40,
+      "x": -0.22357931379761783,
+      "y": 0.8806383435685196
+    },
+    {
+      "id": "new-york-police-department",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 3,
+      "x": -0.4054078314914784,
+      "y": -0.893837601069796
+    },
+    {
+      "id": "chicago-police-department",
+      "count": 8,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 3,
+      "x": -0.42035124672882523,
+      "y": -0.8508905607716609
+    },
+    {
+      "id": "delphi-technologies",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": 0.8799413387504745,
+      "y": 0.4893693179322044
+    },
+    {
+      "id": "airbnb",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 41,
+      "x": 0.2914168142887654,
+      "y": 0.9104124939691202
+    },
+    {
+      "id": "robert-abela",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 42,
+      "x": 0.6763200480475486,
+      "y": -0.7055842775574535
+    },
+    {
+      "id": "benjamin-netanyahu",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 43,
+      "x": 0.9661439565278644,
+      "y": 0.03366205996334643
+    },
+    {
+      "id": "x-(twitter)-users",
+      "count": 8,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": 0.5095525425268509,
+      "y": 0.8511252824409644
+    },
+    {
+      "id": "realpage",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 44,
+      "x": -0.31714596485806834,
+      "y": -0.9067571359294295
+    },
+    {
+      "id": "pro-ibrahim-traore-information-ecosystem",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.8573575282137529,
+      "y": -0.17714692767544554
+    },
+    {
+      "id": "users-of-llama.cpp-servers",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": 0.6206212998306807,
+      "y": 0.7694073390775649
+    },
+    {
+      "id": "deepseek",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.9699264905718588,
+      "y": -0.04226128052824391
+    },
+    {
+      "id": "artists",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 45,
+      "x": -0.20983921695248853,
+      "y": -0.8921184654665164
+    },
+    {
+      "id": "elevenlabs",
+      "count": 7,
+      "roles": [
+        "developer"
+      ],
+      "community": 2,
+      "x": -0.867088607948882,
+      "y": -0.38106345113407425
+    },
+    {
+      "id": "chatgpt-users",
+      "count": 21,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.9274260585653168,
+      "y": -0.35573677017537875
+    },
+    {
+      "id": "scammers",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.016176856686306064,
+      "y": 0.8900432030518483
+    },
+    {
+      "id": "unknown-voice-synthesis-technology-developers",
+      "count": 4,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.15417071495160656,
+      "y": 0.9675921535615514
+    },
+    {
+      "id": "russian-state-media",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.8983192814498687,
+      "y": -0.45758323677044255
+    },
+    {
+      "id": "unknown-tiktok-user",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.15633720259631229,
+      "y": -0.8789224134986467
+    },
+    {
+      "id": "huawei",
+      "count": 4,
+      "roles": [
+        "developer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.28482126809678676,
+      "y": -0.9437142544667071
+    },
+    {
+      "id": "grammarly",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 46,
+      "x": 0.8729110126678009,
+      "y": -0.03879395899348438
+    },
+    {
+      "id": "public-figures",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 47,
+      "x": -0.905722707210375,
+      "y": -0.35749268871824263
+    },
+    {
+      "id": "amazon-customers",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 48,
+      "x": 0.8209240219491679,
+      "y": -0.5606031627593766
+    },
+    {
+      "id": "people-seeking-medical-advice",
+      "count": 19,
+      "roles": [
+        "harmed"
+      ],
+      "community": 49,
+      "x": -0.9245955199921975,
+      "y": -0.06265722416467662
+    },
+    {
+      "id": "general-public-of-ukraine",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 50,
+      "x": 0.9315664556319732,
+      "y": -0.40518006873063134
+    },
+    {
+      "id": "gmail-users",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 51,
+      "x": 0.4050460215946207,
+      "y": 0.8364873169921124
+    },
+    {
+      "id": "general-public",
+      "count": 272,
+      "roles": [
+        "harmed"
+      ],
+      "community": 52,
+      "x": -0.5247963676168342,
+      "y": 0.7623866679034064
+    },
+    {
+      "id": "volvo",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 53,
+      "x": -0.49019507675731583,
+      "y": 0.7250717169133623
+    },
+    {
+      "id": "deepfake-creators",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 6,
+      "x": 0.7978043890000015,
+      "y": 0.04279405874194471
+    },
+    {
+      "id": "chinese-government",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.7159453555852542,
+      "y": 0.6768351765061886
+    },
+    {
+      "id": "misinformation-spreaders",
+      "count": 7,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.33234209748428784,
+      "y": -0.8761411473439736
+    },
+    {
+      "id": "ukraine",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 54,
+      "x": -0.9484425181028718,
+      "y": 0.16613036018183078
+    },
+    {
+      "id": "president-joe-biden",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 55,
+      "x": 0.4095526199871719,
+      "y": -0.9106826874007317
+    },
+    {
+      "id": "truth",
+      "count": 62,
+      "roles": [
+        "harmed"
+      ],
+      "community": 56,
+      "x": 0.11796740073045395,
+      "y": -0.9094747967584607
+    },
+    {
+      "id": "unknown-generative-ai-developers",
+      "count": 48,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": 0.17959537239971676,
+      "y": -0.3747562178650165
+    },
+    {
+      "id": "general-public-of-the-philippines",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 57,
+      "x": 0.7947344529911073,
+      "y": -0.44362425752479556
+    },
+    {
+      "id": "general-public-of-ireland",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 58,
+      "x": 0.7504712643635857,
+      "y": -0.6902754966458506
+    },
+    {
+      "id": "unknown-image-generator-developers",
+      "count": 31,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.23241657438850333,
+      "y": -0.737452436243729
+    },
+    {
+      "id": "cryptocurrency-investors-defrauded-by-ai-generated-profiles",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 59,
+      "x": 0.7440758005052246,
+      "y": 0.6937842827506816
+    },
+    {
+      "id": "unknown-sextortionists",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.7655840325871294,
+      "y": 0.4848754077371725
+    },
+    {
+      "id": "educational-communities",
+      "count": 81,
+      "roles": [
+        "harmed"
+      ],
+      "community": 60,
+      "x": 0.9399845988679546,
+      "y": 0.07890171079306509
+    },
+    {
+      "id": "anysphere",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.262181076838838,
+      "y": -0.8750239048050951
+    },
+    {
+      "id": "general-public-of-turkey",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 61,
+      "x": -0.669691189202145,
+      "y": 0.74069646850188
+    },
+    {
+      "id": "democracy",
+      "count": 58,
+      "roles": [
+        "harmed"
+      ],
+      "community": 62,
+      "x": 0.9317207840476411,
+      "y": 0.28702684666602146
+    },
+    {
+      "id": "general-public-of-the-united-kingdom",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 63,
+      "x": -0.5624145753466704,
+      "y": -0.6872302545930337
+    },
+    {
+      "id": "meta",
+      "count": 94,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": 0.20768166106468927,
+      "y": 0.49938028810993773
+    },
+    {
+      "id": "baidu",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 64,
+      "x": 0.8306916966479523,
+      "y": 0.5402672772187317
+    },
+    {
+      "id": "uber-drivers",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 65,
+      "x": 0.4344661665910823,
+      "y": -0.8707589656527073
+    },
+    {
+      "id": "australian-investors",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 66,
+      "x": -0.490347043491695,
+      "y": 0.8525389035217916
+    },
+    {
+      "id": "general-public-of-the-european-union",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 67,
+      "x": 0.24481332196131167,
+      "y": -0.961764030456179
+    },
+    {
+      "id": "character.ai-users",
+      "count": 9,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.9088245669100125,
+      "y": 0.2777547162926359
+    },
+    {
+      "id": "general-public-of-hong-kong",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 68,
+      "x": -0.894918675581533,
+      "y": -0.4581751068012961
+    },
+    {
+      "id": "instagram-users",
+      "count": 19,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.3250142311629916,
+      "y": 0.8308050107606486
+    },
+    {
+      "id": "government-of-russia",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.43108180815876584,
+      "y": -0.5880460288720596
+    },
+    {
+      "id": "unnamed",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.7087339949380856,
+      "y": -0.6242320668482515
+    },
+    {
+      "id": "voice-actors",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 69,
+      "x": -0.47333072903580803,
+      "y": 0.7831960115423325
+    },
+    {
+      "id": "storm-1516",
+      "count": 8,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.34711870197393885,
+      "y": 0.7815633319332704
+    },
+    {
+      "id": "general-public-of-south-korea",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 70,
+      "x": 0.8407442573205529,
+      "y": 0.2971886617039943
+    },
+    {
+      "id": "meta-platforms",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": -0.8947054519083936,
+      "y": -0.320288316034777
+    },
+    {
+      "id": "boys",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 6,
+      "x": -0.6301213029384741,
+      "y": -0.6834736734866774
+    },
+    {
+      "id": "joe-biden",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 71,
+      "x": 0.9831689995994489,
+      "y": -0.1598732898367652
+    },
+    {
+      "id": "synthesia",
+      "count": 4,
+      "roles": [
+        "developer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.9595803144013083,
+      "y": 0.14526940621489595
+    },
+    {
+      "id": "publishers",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 72,
+      "x": 0.9332994077417582,
+      "y": -0.05792029065281145
+    },
+    {
+      "id": "stephan-de-vries",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.8422327201318909,
+      "y": -0.17795264942778613
+    },
+    {
+      "id": "students",
+      "count": 90,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 6,
+      "x": -0.6728341570984361,
+      "y": 0.6446824513967908
+    },
+    {
+      "id": "perplexity",
+      "count": 9,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.24244832900172103,
+      "y": -0.9589014660162796
+    },
+    {
+      "id": "character.ai",
+      "count": 19,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.47393224704839465,
+      "y": -0.8196477185281962
+    },
+    {
+      "id": "paypal",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 73,
+      "x": 0.6403588624790393,
+      "y": 0.8138831366689036
+    },
+    {
+      "id": "alibaba",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": 0.9351913247144594,
+      "y": -0.2924141063168474
+    },
+    {
+      "id": "cyber-criminals",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.8269682729141398,
+      "y": 0.5985030122018958
+    },
+    {
+      "id": "knightscope",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 74,
+      "x": 0.004484088055370412,
+      "y": 0.9752272383025213
+    },
+    {
+      "id": "valery-korovin",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.8770868277490432,
+      "y": 0.5279438879404393
+    },
+    {
+      "id": "amazon-fresh",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 75,
+      "x": -0.8491392875579149,
+      "y": -0.2456565987841867
+    },
+    {
+      "id": "doctors",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 76,
+      "x": 0.8507929148988151,
+      "y": -0.4587369044519277
+    },
+    {
+      "id": "unknown-ai-image-generator-technology-developers",
+      "count": 4,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.8700744657045167,
+      "y": 0.2962839499748211
+    },
+    {
+      "id": "various-generative-ai-developers",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.9680555453349398,
+      "y": 0.20558966217186242
+    },
+    {
+      "id": "snapchat",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 2,
+      "x": 0.12987205816836972,
+      "y": -0.9514418856540575
+    },
+    {
+      "id": "unknown-malicious-actors",
+      "count": 13,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.16612439688476652,
+      "y": 0.9745759562004735
+    },
+    {
+      "id": "fact-checkers",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 77,
+      "x": -0.9217860420032997,
+      "y": 0.09951931045405593
+    },
+    {
+      "id": "general-motors",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.8800905958789104,
+      "y": 0.43430786338427907
+    },
+    {
+      "id": "state-farm",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 78,
+      "x": 0.7279139866331883,
+      "y": 0.5734376818260609
+    },
+    {
+      "id": "runway",
+      "count": 5,
+      "roles": [
+        "developer"
+      ],
+      "community": 5,
+      "x": -0.4597675241806142,
+      "y": -0.7742385499315656
+    },
+    {
+      "id": "authors",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 79,
+      "x": 0.675148969947538,
+      "y": 0.7045981281172994
+    },
+    {
+      "id": "waymo",
+      "count": 24,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 10,
+      "x": 0.5854506568601882,
+      "y": 0.8224728866357602
+    },
+    {
+      "id": "general-public-of-india",
+      "count": 14,
+      "roles": [
+        "harmed"
+      ],
+      "community": 80,
+      "x": 0.7143908329826097,
+      "y": -0.3868522321225517
+    },
+    {
+      "id": "government-of-north-korea",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 2,
+      "x": 0.8820400532579605,
+      "y": 0.3404679227613592
+    },
+    {
+      "id": "united-states-immigration-and-customs-enforcement",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 2,
+      "x": 0.459817733859621,
+      "y": 0.8269478375018865
+    },
+    {
+      "id": "internet-users",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 81,
+      "x": 0.8927335233802247,
+      "y": -0.3928658394919439
+    },
+    {
+      "id": "waymo-passengers",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 82,
+      "x": -0.06069926011712875,
+      "y": -0.9571791761639359
+    },
+    {
+      "id": "pedestrians",
+      "count": 9,
+      "roles": [
+        "harmed"
+      ],
+      "community": 83,
+      "x": 0.10529544343085971,
+      "y": -0.9742481629223254
+    },
+    {
+      "id": "meta-users",
+      "count": 14,
+      "roles": [
+        "harmed"
+      ],
+      "community": 84,
+      "x": 0.7286489887425449,
+      "y": 0.19775465027833852
+    },
+    {
+      "id": "keolis-north-america",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 14,
+      "x": -0.7074093392969744,
+      "y": 0.5171729339643918
+    },
+    {
+      "id": "national-security-and-intelligence-stakeholders",
+      "count": 59,
+      "roles": [
+        "harmed"
+      ],
+      "community": 85,
+      "x": -0.752261306953646,
+      "y": -0.7016884601707277
+    },
+    {
+      "id": "journalists",
+      "count": 10,
+      "roles": [
+        "harmed"
+      ],
+      "community": 86,
+      "x": 0.8888642456925075,
+      "y": -0.34190072156976914
+    },
+    {
+      "id": "san-francisco-residents",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 87,
+      "x": -0.9183185362389603,
+      "y": 0.1563169849623156
+    },
+    {
+      "id": "unknown-deepfake-creator",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.6972375317314039,
+      "y": -0.6642983003066367
+    },
+    {
+      "id": "general-public-of-sudan",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 88,
+      "x": 0.2707545289384579,
+      "y": -0.9315249445419209
+    },
+    {
+      "id": "financial-fraud-victims",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 89,
+      "x": -0.9565664335899093,
+      "y": 0.005080325690577151
+    },
+    {
+      "id": "tencent",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 12,
+      "x": 0.3982159852556463,
+      "y": 0.7772623729147885
+    },
+    {
+      "id": "maia-sandu",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 90,
+      "x": 0.27749084270712965,
+      "y": 0.9558471797522958
+    },
+    {
+      "id": "professors",
+      "count": 4,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.41074816780207646,
+      "y": -0.7826020218805008
+    },
+    {
+      "id": "general-public-of-brazil",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 91,
+      "x": 0.7506231500499215,
+      "y": -0.5957748844924589
+    },
+    {
+      "id": "ocado",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 92,
+      "x": -0.0036925665609168737,
+      "y": -0.9633503080347795
+    },
+    {
+      "id": "deepseek-ai",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.7194856724471594,
+      "y": 0.7353082839885033
+    },
+    {
+      "id": "general-public-of-thailand",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 93,
+      "x": 0.8378799117999967,
+      "y": 0.47414637208754523
+    },
+    {
+      "id": "keir-starmer",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 94,
+      "x": -0.09067820507043217,
+      "y": -0.9294017759230315
+    },
+    {
+      "id": "x-(twitter)",
+      "count": 11,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.7578467332429629,
+      "y": -0.576147802457394
+    },
+    {
+      "id": "unknown-facial-recognition-technology-developers",
+      "count": 4,
+      "roles": [
+        "developer"
+      ],
+      "community": 8,
+      "x": 0.2297916883098388,
+      "y": 0.8693392668480241
+    },
+    {
+      "id": "phishers",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.7424370378118069,
+      "y": -0.5460616184565417
+    },
+    {
+      "id": "detroit-police-department",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.9464158419502404,
+      "y": 0.3300794933299704
+    },
+    {
+      "id": "userway",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 95,
+      "x": 0.6571679384868225,
+      "y": 0.5681177252112568
+    },
+    {
+      "id": "grok-users",
+      "count": 5,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.14474644202009926,
+      "y": -0.8977194610914053
+    },
+    {
+      "id": "law-enforcement",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 8,
+      "x": -0.3782696831778706,
+      "y": 0.8324434265412718
+    },
+    {
+      "id": "meta-ai-users",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 96,
+      "x": -0.861690414431541,
+      "y": -0.5313644714605409
+    },
+    {
+      "id": "megvii",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.6860609212044764,
+      "y": -0.7621554079297401
+    },
+    {
+      "id": "volodymyr-zelenskyy",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 97,
+      "x": 0.8903294991297883,
+      "y": 0.38219656775009186
+    },
+    {
+      "id": "shotspotter",
+      "count": 7,
+      "roles": [
+        "developer"
+      ],
+      "community": 3,
+      "x": 0.0746363809370966,
+      "y": -0.9542120121450475
+    },
+    {
+      "id": "waze",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 98,
+      "x": 0.20391021848522306,
+      "y": -0.810796415735657
+    },
+    {
+      "id": "general-public-of-kenya",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 99,
+      "x": -0.8736383204378713,
+      "y": -0.2878118196719787
+    },
+    {
+      "id": "unknown-voice-cloning-technology-developers",
+      "count": 195,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.10575593912096819,
+      "y": 0.06981666906809846
+    },
+    {
+      "id": "tesla",
+      "count": 94,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 9,
+      "x": 0.3229910063598888,
+      "y": -0.9300586819663765
+    },
+    {
+      "id": "san-francisco-firefighters",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 100,
+      "x": -0.5714049294289818,
+      "y": 0.6563859270221623
+    },
+    {
+      "id": "unnamed-deepfake-creators",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.0019024471966036644,
+      "y": 0.939765858523902
+    },
+    {
+      "id": "judicial-integrity",
+      "count": 17,
+      "roles": [
+        "harmed"
+      ],
+      "community": 101,
+      "x": 0.44778346597121915,
+      "y": -0.8419416395454272
+    },
+    {
+      "id": "tiktok-users",
+      "count": 20,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.9228061881204122,
+      "y": 0.25707555762877865
+    },
+    {
+      "id": "cnn",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 102,
+      "x": -0.9614257994173102,
+      "y": 0.10132969058998935
+    },
+    {
+      "id": "david-harris",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 11,
+      "x": 0.9769905941159179,
+      "y": 0.11300942752554263
+    },
+    {
+      "id": "general-public-of-canada",
+      "count": 8,
+      "roles": [
+        "harmed"
+      ],
+      "community": 103,
+      "x": -0.3971691657835186,
+      "y": 0.7795130855587328
+    },
+    {
+      "id": "general-public-of-croatia",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 104,
+      "x": -0.5969330367738763,
+      "y": 0.5747235495131818
+    },
+    {
+      "id": "github",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 105,
+      "x": 0.9647531073876012,
+      "y": -0.20709066072424667
+    },
+    {
+      "id": "metropolitan-police-service",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.785238453639497,
+      "y": 0.6719819518718004
+    },
+    {
+      "id": "women",
+      "count": 25,
+      "roles": [
+        "harmed"
+      ],
+      "community": 106,
+      "x": -0.47547374705778006,
+      "y": -0.8675741996053692
+    },
+    {
+      "id": "amazon-delivery-drivers",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 107,
+      "x": -0.5863714927553706,
+      "y": -0.8346232144052759
+    },
+    {
+      "id": "operation-overload",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.9041066075212291,
+      "y": 0.3076688265495985
+    },
+    {
+      "id": "unknown-deepfake-technology-developers",
+      "count": 360,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.16459516224228543,
+      "y": -0.030617723181642936
+    },
+    {
+      "id": "general-public-of-malaysia",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 108,
+      "x": 0.6093040915308705,
+      "y": -0.8240509617538251
+    },
+    {
+      "id": "xai",
+      "count": 47,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.460074280563544,
+      "y": -0.32814353865796103
+    },
+    {
+      "id": "kamala-harris",
+      "count": 8,
+      "roles": [
+        "harmed"
+      ],
+      "community": 109,
+      "x": -0.8378239854330563,
+      "y": 0.4505012565873724
+    },
+    {
+      "id": "mark-zuckerberg",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 110,
+      "x": 0.2486338385798219,
+      "y": 0.923471641738928
+    },
+    {
+      "id": "investors",
+      "count": 21,
+      "roles": [
+        "harmed"
+      ],
+      "community": 111,
+      "x": 0.513854956165666,
+      "y": 0.805340695987069
+    },
+    {
+      "id": "victims-of-deepfake-abuse",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 112,
+      "x": -0.4621418375766939,
+      "y": -0.824806065485772
+    },
+    {
+      "id": "legal-system",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 113,
+      "x": 0.5811892918576494,
+      "y": 0.7655163400355472
+    },
+    {
+      "id": "individual-kaggle-competitors",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 114,
+      "x": 0.9943946739292432,
+      "y": -0.10778064495195488
+    },
+    {
+      "id": "san-francisco-fire-department",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 115,
+      "x": -0.2714530450386387,
+      "y": 0.8772774956090797
+    },
+    {
+      "id": "general-public-of-texas",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 116,
+      "x": -0.24390107806625366,
+      "y": 0.9370601226911618
+    },
+    {
+      "id": "general-public-of-bangladesh",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 117,
+      "x": 0.9408132636624943,
+      "y": -0.1792452044578057
+    },
+    {
+      "id": "general-public-of-singapore",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 118,
+      "x": 0.6925614988334956,
+      "y": 0.6500624895158383
+    },
+    {
+      "id": "apple",
+      "count": 33,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.5441007274211652,
+      "y": 0.8332499236882531
+    },
+    {
+      "id": "employees",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 7,
+      "x": 0.041434619952460165,
+      "y": 0.929859970527379
+    },
+    {
+      "id": "unknown-image-generator-developer",
+      "count": 4,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": -0.3107045051943437,
+      "y": 0.9080512966332509
+    },
+    {
+      "id": "deloitte",
+      "count": 4,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.07989482862795004,
+      "y": -0.9829876899553369
+    },
+    {
+      "id": "cruise",
+      "count": 27,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 119,
+      "x": 0.6857417488158796,
+      "y": -0.7570806243674921
+    },
+    {
+      "id": "tinder",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 120,
+      "x": -0.2791465883195959,
+      "y": 0.9354002374481161
+    },
+    {
+      "id": "uk-home-office",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 121,
+      "x": 0.983505926080295,
+      "y": 0.07671479539802888
+    },
+    {
+      "id": "openai",
+      "count": 236,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.06937213534545068,
+      "y": -0.01986991590718221
+    },
+    {
+      "id": "sit-acronis-autonomous",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 122,
+      "x": -0.6492631565078772,
+      "y": -0.6281550363265729
+    },
+    {
+      "id": "emotionally-vulnerable-individuals",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 123,
+      "x": 0.542365185656502,
+      "y": 0.7575546900903904
+    },
+    {
+      "id": "youtube",
+      "count": 28,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": 0.740206588077152,
+      "y": 0.6233560725048214
+    },
+    {
+      "id": "epistemic-integrity",
+      "count": 276,
+      "roles": [
+        "harmed"
+      ],
+      "community": 124,
+      "x": -0.9396233209595433,
+      "y": -0.08777478894601937
+    },
+    {
+      "id": "celebrities",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 125,
+      "x": -0.954075136863022,
+      "y": 0.04455568252272207
+    },
+    {
+      "id": "new-york-city-police-department",
+      "count": 4,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 3,
+      "x": -0.04383260042017016,
+      "y": 0.9489185568845796
+    },
+    {
+      "id": "john-mark-dougan",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.18011939066652632,
+      "y": -0.9374369089762998
+    },
+    {
+      "id": "jefferson-parish-sheriff's-office",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 3,
+      "x": -0.714693264173418,
+      "y": 0.6355530428282447
+    },
+    {
+      "id": "minors",
+      "count": 57,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 6,
+      "x": 0.3467298519114565,
+      "y": -0.9016158238598361
+    },
+    {
+      "id": "tusimple",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 126,
+      "x": -0.8968577629853878,
+      "y": 0.34387770344021745
+    },
+    {
+      "id": "quantum-ai-scammers",
+      "count": 6,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.8506697071714769,
+      "y": 0.494451722108494
+    },
+    {
+      "id": "boston-dynamics",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.49667232473649947,
+      "y": -0.8497323374234379
+    },
+    {
+      "id": "dpd",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 127,
+      "x": -0.4131338659157781,
+      "y": 0.9274037956192874
+    },
+    {
+      "id": "donald-trump",
+      "count": 28,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": -0.4090921786926858,
+      "y": -0.7749941423932792
+    },
+    {
+      "id": "bytedance",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 128,
+      "x": 0.4400894544328139,
+      "y": 0.9021274840748572
+    },
+    {
+      "id": "university-students",
+      "count": 16,
+      "roles": [
+        "harmed"
+      ],
+      "community": 129,
+      "x": 0.9695834804006128,
+      "y": 0.28955784452405947
+    },
+    {
+      "id": "unknown-social-media-account-operators",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.1224086661914952,
+      "y": -0.9556781235297682
+    },
+    {
+      "id": "scarlett-johansson",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 130,
+      "x": 0.9205839065415428,
+      "y": 0.1352366908926309
+    },
+    {
+      "id": "unknown-social-media-accounts",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.0919517291690068,
+      "y": 0.9519320122327465
+    },
+    {
+      "id": "general-public-of-china",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 131,
+      "x": -0.9292766502152039,
+      "y": -0.11717966343492174
+    },
+    {
+      "id": "american-voters",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 132,
+      "x": -0.9613154389406925,
+      "y": -0.12884699181518952
+    },
+    {
+      "id": "elderly-individuals",
+      "count": 10,
+      "roles": [
+        "harmed"
+      ],
+      "community": 133,
+      "x": -0.7752357759102694,
+      "y": -0.6385736527750481
+    },
+    {
+      "id": "15.ai",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 134,
+      "x": -0.9143602663210578,
+      "y": 0.23144098208042962
+    },
+    {
+      "id": "linkedin",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": 0.9016882713800652,
+      "y": 0.19485616476662948
+    },
+    {
+      "id": "storm-1679",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.9560270569828749,
+      "y": -0.2720227998708444
+    },
+    {
+      "id": "perplexity-ai",
+      "count": 9,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.4037454282728851,
+      "y": 0.866534833885255
+    },
+    {
+      "id": "weibo",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 135,
+      "x": -0.3324021162037226,
+      "y": 0.9330928541063084
+    },
+    {
+      "id": "google",
+      "count": 153,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.637703300305192,
+      "y": 0.5172630695753808
+    },
+    {
+      "id": "fable",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.8376362586743749,
+      "y": 0.5560142005393521
+    },
+    {
+      "id": "unknown-large-language-model-developers",
+      "count": 19,
+      "roles": [
+        "developer"
+      ],
+      "community": 2,
+      "x": 0.10737528589862158,
+      "y": 0.9794558372952119
+    },
+    {
+      "id": "nomi-ai",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 136,
+      "x": -0.9410718690052677,
+      "y": 0.12968967709573678
+    },
+    {
+      "id": "girls",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 137,
+      "x": 0.9897571231660028,
+      "y": -0.043155030318682217
+    },
+    {
+      "id": "frauke-zeller",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 11,
+      "x": 0.6337436778557148,
+      "y": 0.6483887086575872
+    },
+    {
+      "id": "taylor-swift",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 138,
+      "x": -0.16300064127285996,
+      "y": 0.8492457776568814
+    },
+    {
+      "id": "usc-information-sciences-institute",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 139,
+      "x": 0.14245440747110413,
+      "y": 0.9476457721531906
+    },
+    {
+      "id": "microsoft",
+      "count": 80,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.9286989083916679,
+      "y": -0.2892814494752976
+    },
+    {
+      "id": "traffic-participants",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 140,
+      "x": 0.8229467736361759,
+      "y": 0.6158704090446724
+    },
+    {
+      "id": "university-applicants",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 141,
+      "x": 0.1436121577572128,
+      "y": 0.8484290456473439
+    },
+    {
+      "id": "home-office",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 8,
+      "x": -0.581781473186789,
+      "y": -0.7387911921677235
+    },
+    {
+      "id": "general-public-of-burkina-faso",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 142,
+      "x": -0.20194339622355764,
+      "y": -0.8448923890678074
+    },
+    {
+      "id": "minority-groups",
+      "count": 11,
+      "roles": [
+        "harmed"
+      ],
+      "community": 143,
+      "x": 0.16371693865885617,
+      "y": -0.9543165157051435
+    },
+    {
+      "id": "the-new-york-times",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 144,
+      "x": 0.7336509260449352,
+      "y": 0.7560623693062213
+    },
+    {
+      "id": "instagram",
+      "count": 24,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": 0.5806907876531223,
+      "y": -0.0981099715384565
+    },
+    {
+      "id": "crushon.ai",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.45132242176200066,
+      "y": 0.8207174391806267
+    },
+    {
+      "id": "elderly-investors",
+      "count": 10,
+      "roles": [
+        "harmed"
+      ],
+      "community": 145,
+      "x": 0.5211279635554219,
+      "y": -0.803821307904847
+    },
+    {
+      "id": "unknown-deepfake-technology",
+      "count": 4,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": 0.7882544330006773,
+      "y": 0.62248433160735
+    },
+    {
+      "id": "youtube-viewers",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 146,
+      "x": 0.9660687573689316,
+      "y": 0.24690588926176485
+    },
+    {
+      "id": "my_handy_design",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 147,
+      "x": 0.8036775534625668,
+      "y": -0.36683290501854526
+    },
+    {
+      "id": "unknown-scammers",
+      "count": 187,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.020467535818354674,
+      "y": -0.08923768717608495
+    },
+    {
+      "id": "general-public-of-the-united-states",
+      "count": 16,
+      "roles": [
+        "harmed"
+      ],
+      "community": 148,
+      "x": -0.6411301703192244,
+      "y": -0.804589481128614
+    },
+    {
+      "id": "pro-kremlin-actors",
+      "count": 6,
+      "roles": [
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.19116261595846135,
+      "y": 0.9079343527755994
+    },
+    {
+      "id": "gemini-users",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 149,
+      "x": 0.8583982033804156,
+      "y": -0.5718618245907998
+    },
+    {
+      "id": "eight-sleep",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 150,
+      "x": 0.6669375809996917,
+      "y": -0.5822516484758149
+    },
+    {
+      "id": "unnamed-tesla-driver",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 9,
+      "x": 0.9147148540341079,
+      "y": 0.45580263444354396
+    },
+    {
+      "id": "chinese-communist-party",
+      "count": 8,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.938686174328239,
+      "y": -0.14292243864496484
+    },
+    {
+      "id": "lee-hsien-loong",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 151,
+      "x": -0.2942529833301379,
+      "y": -0.8507567633128109
+    },
+    {
+      "id": "latitude",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": -0.8486468740054257,
+      "y": 0.5209595255792249
+    },
+    {
+      "id": "twitter",
+      "count": 21,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": 0.40929858876036845,
+      "y": 0.9312484898742434
+    },
+    {
+      "id": "academic-integrity",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 152,
+      "x": 1.0,
+      "y": 0.03291631285739029
+    },
+    {
+      "id": "lloyds-bank",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.358529250411182,
+      "y": 0.9266581091321547
+    },
+    {
+      "id": "serve-robotics",
+      "count": 5,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 10,
+      "x": 0.8292307506137857,
+      "y": -0.5167671505806105
+    },
+    {
+      "id": "diabetes-patients",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 153,
+      "x": 0.028817768732923372,
+      "y": -0.9461649039407984
+    },
+    {
+      "id": "openai-users",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 154,
+      "x": 0.9752393049004836,
+      "y": 0.16829442348790646
+    },
+    {
+      "id": "eleutherai",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 5,
+      "x": -0.5617717728095108,
+      "y": 0.32557678275648905
+    },
+    {
+      "id": "general-public-of-pakistan",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 155,
+      "x": 0.6191685135949778,
+      "y": -0.6477110694150454
+    },
+    {
+      "id": "unnamed-generative-ai-companies",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 2,
+      "x": -0.8536539799366952,
+      "y": 0.41507912539015185
+    },
+    {
+      "id": "quantum-ai-victims",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 156,
+      "x": 0.16015687402422443,
+      "y": 0.9006604983595753
+    },
+    {
+      "id": "drake",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.10608135533708585,
+      "y": 0.9338471077040909
+    },
+    {
+      "id": "inflection",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.19442665250086882,
+      "y": 0.07519334589070563
+    },
+    {
+      "id": "chatgpt",
+      "count": 10,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 2,
+      "x": 0.9356671214530592,
+      "y": -0.23710337855204427
+    },
+    {
+      "id": "yahoo-boys",
+      "count": 5,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.5286412987321111,
+      "y": -0.8615243360423709
+    },
+    {
+      "id": "compvis-lmu",
+      "count": 5,
+      "roles": [
+        "developer"
+      ],
+      "community": 5,
+      "x": 0.5264622661329561,
+      "y": 0.2088019470259241
+    },
+    {
+      "id": "digital-artists",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 157,
+      "x": 0.6479983002491864,
+      "y": -0.6930918699071542
+    },
+    {
+      "id": "unknown-scammers-impersonating-elon-musk",
+      "count": 4,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.4483088455571585,
+      "y": -0.9082168403735311
+    },
+    {
+      "id": "youtube-users",
+      "count": 16,
+      "roles": [
+        "harmed"
+      ],
+      "community": 158,
+      "x": -0.7777155945733236,
+      "y": 0.38588692401153024
+    },
+    {
+      "id": "aws",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.6231187406948013,
+      "y": -0.5859288969301496
+    },
+    {
+      "id": "parents",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 159,
+      "x": 0.9254423039824106,
+      "y": -0.3189248949022864
+    },
+    {
+      "id": "google-users",
+      "count": 9,
+      "roles": [
+        "harmed"
+      ],
+      "community": 160,
+      "x": 0.08154218579143836,
+      "y": 0.9137429394217728
+    },
+    {
+      "id": "various-social-media-accounts",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": -0.28981234349450813,
+      "y": 0.8159599737146214
+    },
+    {
+      "id": "journalism",
+      "count": 18,
+      "roles": [
+        "harmed"
+      ],
+      "community": 161,
+      "x": 0.5504015205118693,
+      "y": 0.8551059384102431
+    },
+    {
+      "id": "general-public-of-san-francisco",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 162,
+      "x": -0.4433209912325154,
+      "y": 0.8871401359777198
+    },
+    {
+      "id": "tesla-drivers",
+      "count": 24,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 9,
+      "x": -0.0048996983360437545,
+      "y": -0.905135175880484
+    },
+    {
+      "id": "unknown-ai-image-generator-developer",
+      "count": 10,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": 0.05570403242713502,
+      "y": 0.9777809323026464
+    },
+    {
+      "id": "israel-defense-forces",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 13,
+      "x": 0.293325822952708,
+      "y": -0.8312656713531181
+    },
+    {
+      "id": "unknown-voice-cloning-technology",
+      "count": 7,
+      "roles": [
+        "developer"
+      ],
+      "community": 0,
+      "x": 0.5372250292112873,
+      "y": -0.7554996678944249
+    },
+    {
+      "id": "middle-school-students",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 163,
+      "x": -0.7334745453682338,
+      "y": -0.6765895501927937
+    },
+    {
+      "id": "gemini",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.6943556443388227,
+      "y": -0.6933077943875019
+    },
+    {
+      "id": "media-consumers",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 164,
+      "x": -0.8627038742610523,
+      "y": 0.36763806218663986
+    },
+    {
+      "id": "you.com",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.8239317172847271,
+      "y": -0.4276403813220488
+    },
+    {
+      "id": "mistral",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": 0.9656708550221392,
+      "y": -0.06800556318036713
+    },
+    {
+      "id": "lensa-ai",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 5,
+      "x": 0.5596926520397849,
+      "y": -0.7694347118604006
+    },
+    {
+      "id": "facebook",
+      "count": 108,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.33058823997608583,
+      "y": -0.9366114001429748
+    },
+    {
+      "id": "electoral-integrity",
+      "count": 46,
+      "roles": [
+        "harmed"
+      ],
+      "community": 165,
+      "x": -0.8126442496752573,
+      "y": -0.4780001289972764
+    },
+    {
+      "id": "educators",
+      "count": 8,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": -0.5506446417211024,
+      "y": -0.8195395808015858
+    },
+    {
+      "id": "twitter-users",
+      "count": 15,
+      "roles": [
+        "harmed"
+      ],
+      "community": 166,
+      "x": -0.9187810007459682,
+      "y": -0.17159165095566506
+    },
+    {
+      "id": "chai",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 1,
+      "x": -0.8545007535847046,
+      "y": -0.3348939732960885
+    },
+    {
+      "id": "bbc",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 167,
+      "x": -0.03739192711929486,
+      "y": 0.8840400969662275
+    },
+    {
+      "id": "moltbook",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 168,
+      "x": -0.8836784346842759,
+      "y": 0.442891680792533
+    },
+    {
+      "id": "general-public-of-new-zealand",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 169,
+      "x": 0.3861921777527568,
+      "y": -0.892755494873681
+    },
+    {
+      "id": "alexa-device-owners",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": 0.660361601279243,
+      "y": 0.7709309654501691
+    },
+    {
+      "id": "hirevue",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 170,
+      "x": -0.8576072977544756,
+      "y": -0.45801988882873024
+    },
+    {
+      "id": "nypd",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 3,
+      "x": 0.7830003014032327,
+      "y": 0.5616415715763021
+    },
+    {
+      "id": "general-public-of-australia",
+      "count": 13,
+      "roles": [
+        "harmed"
+      ],
+      "community": 171,
+      "x": -0.7079899251218692,
+      "y": -0.6406558245708565
+    },
+    {
+      "id": "vedal",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 172,
+      "x": -0.8333799588668555,
+      "y": 0.13922287352241738
+    },
+    {
+      "id": "gaggle",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 173,
+      "x": 0.7413774409861975,
+      "y": -0.4905025625474506
+    },
+    {
+      "id": "public-discourse-integrity",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 174,
+      "x": -0.12628631402786744,
+      "y": 0.8945478033273837
+    },
+    {
+      "id": "xiaomi-corporation",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 175,
+      "x": -0.893957986777433,
+      "y": -0.4074723591375759
+    },
+    {
+      "id": "coco-robotics",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 176,
+      "x": 0.3289760583993677,
+      "y": 0.9141842967701708
+    },
+    {
+      "id": "general-public-of-west-africa",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 177,
+      "x": 0.4984944263276663,
+      "y": 0.6724432302079135
+    },
+    {
+      "id": "uber",
+      "count": 20,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": -0.9146998078683682,
+      "y": -0.2152834031461564
+    },
+    {
+      "id": "emergency-responders",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 178,
+      "x": 0.34691935874990687,
+      "y": -0.8425327082471471
+    },
+    {
+      "id": "navihealth",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 179,
+      "x": -0.81633404041233,
+      "y": -0.37271760411622756
+    },
+    {
+      "id": "centrelink",
+      "count": 3,
+      "roles": [
+        "developer",
+        "harmed"
+      ],
+      "community": 180,
+      "x": -0.9445494177586793,
+      "y": -0.24867311151702837
+    },
+    {
+      "id": "clearview-ai",
+      "count": 12,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 3,
+      "x": -0.7662021613027715,
+      "y": -0.5156103471734557
+    },
+    {
+      "id": "general-public-of-malta",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 181,
+      "x": -0.5964308462138614,
+      "y": 0.790880397159338
+    },
+    {
+      "id": "unknown",
+      "count": 115,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 3,
+      "x": 0.2753216591800717,
+      "y": 0.32747132810742074
+    },
+    {
+      "id": "replika-users",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 182,
+      "x": 0.9071324584051602,
+      "y": -0.2078932469130621
+    },
+    {
+      "id": "unknown-ai-developers",
+      "count": 10,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.9428987476347956,
+      "y": 0.06834096164911627
+    },
+    {
+      "id": "cyber-criminal-networks",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.28588179090922466,
+      "y": 0.8670113852858877
+    },
+    {
+      "id": "bing-users",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.03138875923709092,
+      "y": -0.9471157304465725
+    },
+    {
+      "id": "facebook-users",
+      "count": 45,
+      "roles": [
+        "developer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.7599219460380906,
+      "y": -0.47735483676423873
+    },
+    {
+      "id": "children",
+      "count": 12,
+      "roles": [
+        "harmed"
+      ],
+      "community": 183,
+      "x": 0.7398982608232498,
+      "y": 0.4898618249685559
+    },
+    {
+      "id": "government-of-ukraine",
+      "count": 6,
+      "roles": [
+        "harmed"
+      ],
+      "community": 184,
+      "x": -0.21761177349050512,
+      "y": 0.9606333237472139
+    },
+    {
+      "id": "elon-musk",
+      "count": 19,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": 0.38985422777095574,
+      "y": -0.8371931335587918
+    },
+    {
+      "id": "deepfake-technology-developers",
+      "count": 3,
+      "roles": [
+        "developer"
+      ],
+      "community": 6,
+      "x": -0.7878734807786641,
+      "y": -0.5914127948336229
+    },
+    {
+      "id": "mcdonald's",
+      "count": 6,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 4,
+      "x": -0.5102540051006828,
+      "y": -0.8084510122586936
+    },
+    {
+      "id": "russian-government",
+      "count": 7,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 2,
+      "x": -0.7213093890144402,
+      "y": -0.5999521642913899
+    },
+    {
+      "id": "anthropic",
+      "count": 29,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 1,
+      "x": -0.36174459790352,
+      "y": 0.8711723288501935
+    },
+    {
+      "id": "unnamed-male-student",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.9463892548499525,
+      "y": -0.03223992591189018
+    },
+    {
+      "id": "jewish-people",
+      "count": 7,
+      "roles": [
+        "harmed"
+      ],
+      "community": 185,
+      "x": -0.0550229466108081,
+      "y": 0.9794269301334781
+    },
+    {
+      "id": "relations-between-the-united-states-and-ukraine",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 186,
+      "x": -0.9071087239690737,
+      "y": -0.25482627675690195
+    },
+    {
+      "id": "government-of-moldova",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 187,
+      "x": 0.8526157824118792,
+      "y": 0.5745730255547801
+    },
+    {
+      "id": "unknown-advertisers",
+      "count": 3,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.7835148975736951,
+      "y": -0.5663194940813959
+    },
+    {
+      "id": "social-media-users",
+      "count": 27,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": -0.803290752739263,
+      "y": 0.4733473603274652
+    },
+    {
+      "id": "target",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 188,
+      "x": 0.9779956348634163,
+      "y": -0.007994521806376678
+    },
+    {
+      "id": "oprah-winfrey",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 189,
+      "x": 0.4840768697053925,
+      "y": -0.7659369925072751
+    },
+    {
+      "id": "academic-researchers",
+      "count": 5,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 190,
+      "x": 0.6018602354146644,
+      "y": -0.7587844355921081
+    },
+    {
+      "id": "wechat",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 12,
+      "x": -0.7687063363323203,
+      "y": -0.417052054177176
+    },
+    {
+      "id": "mckinsey-and-company",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 191,
+      "x": 0.06788646709777091,
+      "y": -0.908786310412989
+    },
+    {
+      "id": "amazon",
+      "count": 61,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 4,
+      "x": -0.9198806539851793,
+      "y": 0.1990519373633624
+    },
+    {
+      "id": "unit-8200",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 13,
+      "x": -0.8271309660325603,
+      "y": 0.31284350101706104
+    },
+    {
+      "id": "legal-integrity",
+      "count": 4,
+      "roles": [
+        "harmed"
+      ],
+      "community": 192,
+      "x": -0.9095283225213255,
+      "y": -0.13968693422214448
+    },
+    {
+      "id": "navya",
+      "count": 3,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 14,
+      "x": 0.04105370853544013,
+      "y": -0.9717033605618924
+    },
+    {
+      "id": "spamouflage",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 2,
+      "x": -0.27203240319679384,
+      "y": -0.9105893791428827
+    },
+    {
+      "id": "indian-voters",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 193,
+      "x": -0.5675300297940085,
+      "y": 0.8551124317816919
+    },
+    {
+      "id": "copilot-users",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 194,
+      "x": -0.33523163088538477,
+      "y": 0.871341330984047
+    },
+    {
+      "id": "writers",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 195,
+      "x": -0.5718780886911959,
+      "y": 0.7073761333088285
+    },
+    {
+      "id": "researchers",
+      "count": 8,
+      "roles": [
+        "developer",
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.8883768693476096,
+      "y": 0.27036102096916137
+    },
+    {
+      "id": "media-integrity",
+      "count": 11,
+      "roles": [
+        "harmed"
+      ],
+      "community": 196,
+      "x": 0.00999073734257756,
+      "y": -0.8556717873404198
+    },
+    {
+      "id": "motorists",
+      "count": 5,
+      "roles": [
+        "harmed"
+      ],
+      "community": 197,
+      "x": -0.1826346310878073,
+      "y": 0.9498721930100092
+    },
+    {
+      "id": "quantum-ai",
+      "count": 6,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": 0.4728298841835794,
+      "y": 0.8954776710849874
+    },
+    {
+      "id": "universities",
+      "count": 5,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 0,
+      "x": -0.7548098171642902,
+      "y": 0.5851075237491107
+    },
+    {
+      "id": "reddit-users",
+      "count": 3,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 2,
+      "x": 0.7944081608481408,
+      "y": -0.6270481509782287
+    },
+    {
+      "id": "employers",
+      "count": 4,
+      "roles": [
+        "deployer",
+        "harmed"
+      ],
+      "community": 7,
+      "x": -0.8874455090226802,
+      "y": 0.3961709931360947
+    },
+    {
+      "id": "academics",
+      "count": 3,
+      "roles": [
+        "harmed"
+      ],
+      "community": 198,
+      "x": 0.21047539794454373,
+      "y": 0.9168647082601761
+    },
+    {
+      "id": "unknown-actors",
+      "count": 21,
+      "roles": [
+        "deployer"
+      ],
+      "community": 0,
+      "x": -0.6499328804265816,
+      "y": 0.711321616350461
+    },
+    {
+      "id": "pimeyes",
+      "count": 4,
+      "roles": [
+        "developer",
+        "deployer"
+      ],
+      "community": 199,
+      "x": -0.5707800692151732,
+      "y": -0.775679163420174
+    }
+  ],
+  "edges": [
+    {
+      "source": "high-school-students",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "high-school-students",
+      "target": "students",
+      "weight": 2
+    },
+    {
+      "source": "high-school-students",
+      "target": "unknown-image-generator-developers",
+      "weight": 1
+    },
+    {
+      "source": "high-school-students",
+      "target": "boys",
+      "weight": 1
+    },
+    {
+      "source": "matryoshka",
+      "target": "storm-1679",
+      "weight": 5
+    },
+    {
+      "source": "matryoshka",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "matryoshka",
+      "target": "operation-overload",
+      "weight": 4
+    },
+    {
+      "source": "matryoshka",
+      "target": "storm-1516",
+      "weight": 2
+    },
+    {
+      "source": "matryoshka",
+      "target": "john-mark-dougan",
+      "weight": 1
+    },
+    {
+      "source": "matryoshka",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "matryoshka",
+      "target": "various-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "matryoshka",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "matryoshka",
+      "target": "unknown-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "sewell-setzer-iii",
+      "target": "character.ai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-scammers",
+      "weight": 4
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-generative-ai-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-sextortionists",
+      "weight": 1
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "anthropic",
+      "weight": 2
+    },
+    {
+      "source": "unknown-cybercriminals",
+      "target": "government-of-north-korea",
+      "weight": 1
+    },
+    {
+      "source": "meta-ai",
+      "target": "facebook",
+      "weight": 1
+    },
+    {
+      "source": "meta-ai",
+      "target": "meta",
+      "weight": 2
+    },
+    {
+      "source": "ibm",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "ibm",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "ibm",
+      "target": "apple",
+      "weight": 1
+    },
+    {
+      "source": "ibm",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "ibm",
+      "target": "mcdonald's",
+      "weight": 1
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "disinformation-spreaders",
+      "weight": 1
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "pro-kremlin-actors",
+      "weight": 3
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "misinformation-spreaders",
+      "weight": 1
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "government-of-russia",
+      "weight": 3
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "unknown-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "pro-ibrahim-traore-information-ecosystem",
+      "weight": 2
+    },
+    {
+      "source": "pro-russian-influencers",
+      "target": "various-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "stability-ai",
+      "target": "runway",
+      "weight": 5
+    },
+    {
+      "source": "stability-ai",
+      "target": "compvis-lmu",
+      "weight": 5
+    },
+    {
+      "source": "stability-ai",
+      "target": "laion",
+      "weight": 6
+    },
+    {
+      "source": "stability-ai",
+      "target": "eleutherai",
+      "weight": 5
+    },
+    {
+      "source": "stability-ai",
+      "target": "midjourney",
+      "weight": 1
+    },
+    {
+      "source": "stability-ai",
+      "target": "lensa-ai",
+      "weight": 2
+    },
+    {
+      "source": "stability-ai",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "stability-ai",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "turnitin",
+      "target": "universities",
+      "weight": 1
+    },
+    {
+      "source": "cybercriminals",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "cybercriminals",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "none",
+      "target": "huawei",
+      "weight": 1
+    },
+    {
+      "source": "none",
+      "target": "megvii",
+      "weight": 1
+    },
+    {
+      "source": "none",
+      "target": "alibaba",
+      "weight": 1
+    },
+    {
+      "source": "none",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "teachers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "teachers",
+      "target": "educators",
+      "weight": 1
+    },
+    {
+      "source": "organizations",
+      "target": "employees",
+      "weight": 1
+    },
+    {
+      "source": "organizations",
+      "target": "employers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "disinformation-spreaders",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 17
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "misinformation-spreaders",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-actors",
+      "weight": 2
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-ai-image-generator-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-image-generator-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "google",
+      "weight": 4
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-social-media-account-operators",
+      "weight": 2
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 6
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-social-media-accounts",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-generative-ai-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-deepfake-creators",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "storm-1516",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-voice-synthesis-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-disinformation-actors",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "san-francisco-police-department",
+      "target": "new-york-city-police-department",
+      "weight": 1
+    },
+    {
+      "source": "san-francisco-police-department",
+      "target": "chicago-police-department",
+      "weight": 1
+    },
+    {
+      "source": "san-francisco-police-department",
+      "target": "shotspotter",
+      "weight": 1
+    },
+    {
+      "source": "san-francisco-police-department",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "united-states-department-of-homeland-security",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "united-states-department-of-homeland-security",
+      "target": "united-states-immigration-and-customs-enforcement",
+      "weight": 3
+    },
+    {
+      "source": "faceapp",
+      "target": "unknown-deepfake-creators",
+      "weight": 1
+    },
+    {
+      "source": "replika",
+      "target": "chai",
+      "weight": 1
+    },
+    {
+      "source": "replika",
+      "target": "crushon.ai",
+      "weight": 1
+    },
+    {
+      "source": "midjourney",
+      "target": "runway",
+      "weight": 1
+    },
+    {
+      "source": "midjourney",
+      "target": "compvis-lmu",
+      "weight": 1
+    },
+    {
+      "source": "midjourney",
+      "target": "lensa-ai",
+      "weight": 1
+    },
+    {
+      "source": "midjourney",
+      "target": "eleutherai",
+      "weight": 1
+    },
+    {
+      "source": "midjourney",
+      "target": "laion",
+      "weight": 1
+    },
+    {
+      "source": "laion",
+      "target": "runway",
+      "weight": 5
+    },
+    {
+      "source": "laion",
+      "target": "compvis-lmu",
+      "weight": 5
+    },
+    {
+      "source": "laion",
+      "target": "eleutherai",
+      "weight": 5
+    },
+    {
+      "source": "laion",
+      "target": "lensa-ai",
+      "weight": 2
+    },
+    {
+      "source": "laion",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia-aligned-actors",
+      "target": "unknown-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia-aligned-actors",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "government-of-russia-aligned-actors",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "murat-ayfer",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "murat-ayfer",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "tiktok",
+      "target": "youtube",
+      "weight": 1
+    },
+    {
+      "source": "tiktok",
+      "target": "instagram",
+      "weight": 1
+    },
+    {
+      "source": "tiktok",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "tiktok",
+      "target": "twitter",
+      "weight": 1
+    },
+    {
+      "source": "tiktok",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "russian-government",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "chinese-communist-party",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 23
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-scammers",
+      "weight": 8
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-tiktok-user",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-image-generator-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-ai-image-generator-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creators",
+      "target": "unknown-voice-synthesis-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 2
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "misinformation-spreaders",
+      "weight": 7
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 5
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 1
+    },
+    {
+      "source": "disinformation-spreaders",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "ron-desantis's-presidential-campaign",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "us-citizenship-and-immigration-services",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "brouteurs",
+      "target": "yahoo-boys",
+      "weight": 4
+    },
+    {
+      "source": "brouteurs",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "brouteurs",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "new-york-police-department",
+      "target": "unknown",
+      "weight": 4
+    },
+    {
+      "source": "new-york-police-department",
+      "target": "nypd",
+      "weight": 1
+    },
+    {
+      "source": "chicago-police-department",
+      "target": "new-york-city-police-department",
+      "weight": 1
+    },
+    {
+      "source": "chicago-police-department",
+      "target": "shotspotter",
+      "weight": 5
+    },
+    {
+      "source": "delphi-technologies",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "x-(twitter)-users",
+      "target": "grok-users",
+      "weight": 1
+    },
+    {
+      "source": "x-(twitter)-users",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "synthesia",
+      "weight": 1
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "unknown-actors",
+      "weight": 2
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 1
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "government-of-russia",
+      "weight": 2
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "pro-kremlin-actors",
+      "weight": 2
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "pro-ibrahim-traore-information-ecosystem",
+      "target": "various-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "users-of-llama.cpp-servers",
+      "target": "meta",
+      "weight": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "deepseek",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "lloyds-bank",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "reddit-users",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "tiktok-users",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "elevenlabs",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "chatgpt-users",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "chatgpt-users",
+      "target": "chatgpt",
+      "weight": 1
+    },
+    {
+      "source": "scammers",
+      "target": "quantum-ai-scammers",
+      "weight": 2
+    },
+    {
+      "source": "scammers",
+      "target": "quantum-ai",
+      "weight": 2
+    },
+    {
+      "source": "scammers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "scammers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "scammers",
+      "target": "unknown-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "scammers",
+      "target": "deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-synthesis-technology-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "unknown-voice-synthesis-technology-developers",
+      "target": "unknown-scammers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-voice-synthesis-technology-developers",
+      "target": "unknown-generative-ai-developers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-synthesis-technology-developers",
+      "target": "storm-1516",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "perplexity",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "storm-1516",
+      "weight": 2
+    },
+    {
+      "source": "russian-state-media",
+      "target": "government-of-russia",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "inflection",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "russian-state-media",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "you.com",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "meta",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "mistral",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "russian-state-media",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-tiktok-user",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-tiktok-user",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-tiktok-user",
+      "target": "donald-trump",
+      "weight": 1
+    },
+    {
+      "source": "huawei",
+      "target": "megvii",
+      "weight": 1
+    },
+    {
+      "source": "huawei",
+      "target": "alibaba",
+      "weight": 1
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "students",
+      "weight": 1
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "minors",
+      "weight": 1
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "boys",
+      "weight": 1
+    },
+    {
+      "source": "deepfake-creators",
+      "target": "deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "chinese-government",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "chinese-government",
+      "target": "russian-government",
+      "weight": 2
+    },
+    {
+      "source": "chinese-government",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "chinese-government",
+      "target": "spamouflage",
+      "weight": 1
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 2
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "misinformation-spreaders",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 19
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 8
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-scammers",
+      "weight": 16
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "phishers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "cyber-criminals",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "chinese-communist-party",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "storm-1516",
+      "weight": 2
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "storm-1679",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-image-generator-developer",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-large-language-model-developers",
+      "weight": 6
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-image-generator-developers",
+      "weight": 10
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "united-states-immigration-and-customs-enforcement",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-social-media-accounts",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-advertisers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "quantum-ai-scammers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "quantum-ai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-generative-ai-developers",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 26
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-malicious-actors",
+      "weight": 2
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-scammers",
+      "weight": 7
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-social-media-account-operators",
+      "weight": 2
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unnamed-male-student",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "students",
+      "weight": 4
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "boys",
+      "weight": 2
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-large-language-model-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-social-media-accounts",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-advertisers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developers",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-sextortionists",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-sextortionists",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "anysphere",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "facebook",
+      "weight": 11
+    },
+    {
+      "source": "meta",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "microsoft",
+      "weight": 4
+    },
+    {
+      "source": "meta",
+      "target": "instagram",
+      "weight": 4
+    },
+    {
+      "source": "meta",
+      "target": "google",
+      "weight": 8
+    },
+    {
+      "source": "meta",
+      "target": "linkedin",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "unknown-scammers",
+      "weight": 3
+    },
+    {
+      "source": "meta",
+      "target": "facebook-users",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "openai",
+      "weight": 10
+    },
+    {
+      "source": "meta",
+      "target": "deepseek-ai",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "perplexity",
+      "weight": 3
+    },
+    {
+      "source": "meta",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "xai",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "mistral",
+      "weight": 3
+    },
+    {
+      "source": "meta",
+      "target": "anthropic",
+      "weight": 3
+    },
+    {
+      "source": "meta",
+      "target": "x-(twitter)",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "chinese-communist-party",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "storm-1516",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "government-of-russia",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "various-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "eleutherai",
+      "weight": 1
+    },
+    {
+      "source": "meta",
+      "target": "character.ai",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "meta",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "character.ai-users",
+      "target": "character.ai",
+      "weight": 3
+    },
+    {
+      "source": "instagram-users",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "unknown-ai-developers",
+      "weight": 2
+    },
+    {
+      "source": "government-of-russia",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "government-of-russia",
+      "target": "perplexity",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "storm-1516",
+      "weight": 2
+    },
+    {
+      "source": "government-of-russia",
+      "target": "inflection",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "government-of-russia",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "you.com",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "mistral",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "pro-kremlin-actors",
+      "weight": 2
+    },
+    {
+      "source": "government-of-russia",
+      "target": "various-generative-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "government-of-russia",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "unnamed",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "unnamed",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "valery-korovin",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "storm-1679",
+      "weight": 2
+    },
+    {
+      "source": "storm-1516",
+      "target": "john-mark-dougan",
+      "weight": 4
+    },
+    {
+      "source": "storm-1516",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "storm-1516",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "operation-overload",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "perplexity",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "inflection",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "you.com",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "mistral",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "storm-1516",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "meta-platforms",
+      "target": "facebook",
+      "weight": 2
+    },
+    {
+      "source": "meta-platforms",
+      "target": "instagram",
+      "weight": 2
+    },
+    {
+      "source": "boys",
+      "target": "students",
+      "weight": 3
+    },
+    {
+      "source": "boys",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "boys",
+      "target": "minors",
+      "weight": 1
+    },
+    {
+      "source": "synthesia",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "synthesia",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "stephan-de-vries",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "students",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "students",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 10
+    },
+    {
+      "source": "students",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "students",
+      "target": "minors",
+      "weight": 3
+    },
+    {
+      "source": "perplexity",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "microsoft",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "xai",
+      "weight": 3
+    },
+    {
+      "source": "perplexity",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "openai",
+      "weight": 4
+    },
+    {
+      "source": "perplexity",
+      "target": "google",
+      "weight": 4
+    },
+    {
+      "source": "perplexity",
+      "target": "mistral",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "anthropic",
+      "weight": 2
+    },
+    {
+      "source": "perplexity",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "character.ai",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "character.ai",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "character.ai",
+      "target": "crushon.ai",
+      "weight": 1
+    },
+    {
+      "source": "character.ai",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "megvii",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "unnamed-generative-ai-companies",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "mistral",
+      "weight": 1
+    },
+    {
+      "source": "alibaba",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "cyber-criminals",
+      "target": "phishers",
+      "weight": 1
+    },
+    {
+      "source": "cyber-criminals",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "cyber-criminals",
+      "target": "unknown-malicious-actors",
+      "weight": 1
+    },
+    {
+      "source": "cyber-criminals",
+      "target": "cyber-criminal-networks",
+      "weight": 2
+    },
+    {
+      "source": "cyber-criminals",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-ai-image-generator-technology-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-ai-image-generator-technology-developers",
+      "target": "unknown-malicious-actors",
+      "weight": 2
+    },
+    {
+      "source": "unknown-ai-image-generator-technology-developers",
+      "target": "unknown-actors",
+      "weight": 3
+    },
+    {
+      "source": "unknown-ai-image-generator-technology-developers",
+      "target": "social-media-users",
+      "weight": 1
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "eleutherai",
+      "weight": 1
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "cyber-criminal-networks",
+      "weight": 1
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "unknown-scammers",
+      "weight": 2
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "storm-1679",
+      "weight": 1
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "operation-overload",
+      "weight": 1
+    },
+    {
+      "source": "various-generative-ai-developers",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "snapchat",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 2
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-deepfake-creator",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 6
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-actors",
+      "weight": 2
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "cyber-criminal-networks",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-malicious-actors",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "general-motors",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "general-motors",
+      "target": "chatgpt",
+      "weight": 1
+    },
+    {
+      "source": "runway",
+      "target": "compvis-lmu",
+      "weight": 5
+    },
+    {
+      "source": "runway",
+      "target": "eleutherai",
+      "weight": 5
+    },
+    {
+      "source": "runway",
+      "target": "lensa-ai",
+      "weight": 2
+    },
+    {
+      "source": "waymo",
+      "target": "serve-robotics",
+      "weight": 1
+    },
+    {
+      "source": "government-of-north-korea",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "government-of-north-korea",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "government-of-north-korea",
+      "target": "unknown-large-language-model-developers",
+      "weight": 1
+    },
+    {
+      "source": "government-of-north-korea",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "government-of-north-korea",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "united-states-immigration-and-customs-enforcement",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "keolis-north-america",
+      "target": "navya",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creator",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creator",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-creator",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-deepfake-creator",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-creator",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "tencent",
+      "target": "wechat",
+      "weight": 1
+    },
+    {
+      "source": "professors",
+      "target": "universities",
+      "weight": 1
+    },
+    {
+      "source": "professors",
+      "target": "educators",
+      "weight": 1
+    },
+    {
+      "source": "professors",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "deepseek-ai",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "deepseek-ai",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "deepseek-ai",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "x-(twitter)",
+      "target": "unnamed-deepfake-creators",
+      "weight": 1
+    },
+    {
+      "source": "x-(twitter)",
+      "target": "elon-musk",
+      "weight": 3
+    },
+    {
+      "source": "x-(twitter)",
+      "target": "xai",
+      "weight": 5
+    },
+    {
+      "source": "x-(twitter)",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "x-(twitter)",
+      "target": "facebook",
+      "weight": 1
+    },
+    {
+      "source": "unknown-facial-recognition-technology-developers",
+      "target": "law-enforcement",
+      "weight": 1
+    },
+    {
+      "source": "unknown-facial-recognition-technology-developers",
+      "target": "home-office",
+      "weight": 1
+    },
+    {
+      "source": "phishers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 2
+    },
+    {
+      "source": "phishers",
+      "target": "unknown-scammers",
+      "weight": 4
+    },
+    {
+      "source": "phishers",
+      "target": "unknown-voice-cloning-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "detroit-police-department",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "detroit-police-department",
+      "target": "clearview-ai",
+      "weight": 1
+    },
+    {
+      "source": "grok-users",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "law-enforcement",
+      "target": "home-office",
+      "weight": 1
+    },
+    {
+      "source": "megvii",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "shotspotter",
+      "target": "new-york-city-police-department",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 189
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-scammers",
+      "weight": 119
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "pro-kremlin-actors",
+      "weight": 4
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-actors",
+      "weight": 9
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "twitter",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "openai",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "yahoo-boys",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-large-language-model-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "john-mark-dougan",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "social-media-users",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "storm-1679",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "operation-overload",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "quantum-ai-scammers",
+      "weight": 4
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "quantum-ai",
+      "weight": 5
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "donald-trump",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-image-generator-developer",
+      "weight": 1
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-scammers-impersonating-elon-musk",
+      "weight": 4
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-advertisers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology-developers",
+      "target": "unknown-social-media-account-operators",
+      "weight": 1
+    },
+    {
+      "source": "tesla",
+      "target": "unnamed-tesla-driver",
+      "weight": 1
+    },
+    {
+      "source": "tesla",
+      "target": "tesla-drivers",
+      "weight": 1
+    },
+    {
+      "source": "unnamed-deepfake-creators",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 1
+    },
+    {
+      "source": "tiktok-users",
+      "target": "perplexity-ai",
+      "weight": 1
+    },
+    {
+      "source": "tiktok-users",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "tiktok-users",
+      "target": "chatgpt",
+      "weight": 1
+    },
+    {
+      "source": "david-harris",
+      "target": "frauke-zeller",
+      "weight": 1
+    },
+    {
+      "source": "metropolitan-police-service",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "operation-overload",
+      "target": "storm-1679",
+      "weight": 4
+    },
+    {
+      "source": "operation-overload",
+      "target": "unknown-deepfake-technology-developers",
+      "weight": 4
+    },
+    {
+      "source": "operation-overload",
+      "target": "john-mark-dougan",
+      "weight": 1
+    },
+    {
+      "source": "operation-overload",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-scammers",
+      "weight": 153
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "pro-kremlin-actors",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-actors",
+      "weight": 17
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "twitter",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "openai",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "elon-musk",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-image-generator-developer",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "donald-trump",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "drake",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unnamed-male-student",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-ai-developers",
+      "weight": 3
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "quantum-ai-scammers",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "minors",
+      "weight": 3
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "yahoo-boys",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "storm-1679",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-large-language-model-developers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "educators",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "social-media-users",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown",
+      "weight": 3
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "spamouflage",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "quantum-ai",
+      "weight": 5
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-scammers-impersonating-elon-musk",
+      "weight": 4
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "xai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-social-media-account-operators",
+      "weight": 3
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-social-media-accounts",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology-developers",
+      "target": "unknown-advertisers",
+      "weight": 3
+    },
+    {
+      "source": "xai",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "xai",
+      "target": "john-mark-dougan",
+      "weight": 2
+    },
+    {
+      "source": "xai",
+      "target": "microsoft",
+      "weight": 4
+    },
+    {
+      "source": "xai",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "xai",
+      "target": "openai",
+      "weight": 4
+    },
+    {
+      "source": "xai",
+      "target": "google",
+      "weight": 6
+    },
+    {
+      "source": "xai",
+      "target": "mistral",
+      "weight": 3
+    },
+    {
+      "source": "xai",
+      "target": "anthropic",
+      "weight": 3
+    },
+    {
+      "source": "xai",
+      "target": "elon-musk",
+      "weight": 2
+    },
+    {
+      "source": "xai",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "xai",
+      "target": "unknown-social-media-account-operators",
+      "weight": 1
+    },
+    {
+      "source": "apple",
+      "target": "amazon",
+      "weight": 2
+    },
+    {
+      "source": "apple",
+      "target": "microsoft",
+      "weight": 2
+    },
+    {
+      "source": "apple",
+      "target": "google",
+      "weight": 2
+    },
+    {
+      "source": "employees",
+      "target": "employers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developer",
+      "target": "donald-trump",
+      "weight": 1
+    },
+    {
+      "source": "unknown-image-generator-developer",
+      "target": "unknown-scammers",
+      "weight": 2
+    },
+    {
+      "source": "deloitte",
+      "target": "unknown-large-language-model-developers",
+      "weight": 1
+    },
+    {
+      "source": "deloitte",
+      "target": "openai",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "google",
+      "weight": 14
+    },
+    {
+      "source": "openai",
+      "target": "latitude",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "microsoft",
+      "weight": 16
+    },
+    {
+      "source": "openai",
+      "target": "chatgpt",
+      "weight": 9
+    },
+    {
+      "source": "openai",
+      "target": "russian-government",
+      "weight": 2
+    },
+    {
+      "source": "openai",
+      "target": "chinese-communist-party",
+      "weight": 2
+    },
+    {
+      "source": "openai",
+      "target": "perplexity-ai",
+      "weight": 2
+    },
+    {
+      "source": "openai",
+      "target": "john-mark-dougan",
+      "weight": 3
+    },
+    {
+      "source": "openai",
+      "target": "unknown-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "unknown-scammers",
+      "weight": 7
+    },
+    {
+      "source": "openai",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "openai",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "openai",
+      "target": "mistral",
+      "weight": 4
+    },
+    {
+      "source": "openai",
+      "target": "anthropic",
+      "weight": 7
+    },
+    {
+      "source": "openai",
+      "target": "spamouflage",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "fable",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "crushon.ai",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "researchers",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "unknown-large-language-model-developers",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "unnamed-generative-ai-companies",
+      "weight": 1
+    },
+    {
+      "source": "openai",
+      "target": "unknown-social-media-account-operators",
+      "weight": 2
+    },
+    {
+      "source": "youtube",
+      "target": "twitter",
+      "weight": 2
+    },
+    {
+      "source": "youtube",
+      "target": "linkedin",
+      "weight": 1
+    },
+    {
+      "source": "youtube",
+      "target": "facebook",
+      "weight": 2
+    },
+    {
+      "source": "youtube",
+      "target": "instagram",
+      "weight": 1
+    },
+    {
+      "source": "youtube",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "new-york-city-police-department",
+      "target": "boston-dynamics",
+      "weight": 1
+    },
+    {
+      "source": "new-york-city-police-department",
+      "target": "clearview-ai",
+      "weight": 1
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "microsoft",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "google",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "mistral",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "anthropic",
+      "weight": 2
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "storm-1679",
+      "weight": 1
+    },
+    {
+      "source": "john-mark-dougan",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "jefferson-parish-sheriff's-office",
+      "target": "clearview-ai",
+      "weight": 2
+    },
+    {
+      "source": "jefferson-parish-sheriff's-office",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "jefferson-parish-sheriff's-office",
+      "target": "nypd",
+      "weight": 1
+    },
+    {
+      "source": "quantum-ai-scammers",
+      "target": "quantum-ai",
+      "weight": 5
+    },
+    {
+      "source": "quantum-ai-scammers",
+      "target": "unknown-scammers",
+      "weight": 3
+    },
+    {
+      "source": "quantum-ai-scammers",
+      "target": "unknown-deepfake-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-social-media-account-operators",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "unknown-social-media-accounts",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "unknown-social-media-accounts",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "linkedin",
+      "target": "twitter",
+      "weight": 1
+    },
+    {
+      "source": "linkedin",
+      "target": "facebook",
+      "weight": 2
+    },
+    {
+      "source": "linkedin",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "linkedin",
+      "target": "microsoft",
+      "weight": 1
+    },
+    {
+      "source": "linkedin",
+      "target": "instagram",
+      "weight": 1
+    },
+    {
+      "source": "linkedin",
+      "target": "google",
+      "weight": 1
+    },
+    {
+      "source": "storm-1679",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "perplexity-ai",
+      "target": "chatgpt",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "microsoft",
+      "weight": 9
+    },
+    {
+      "source": "google",
+      "target": "amazon",
+      "weight": 5
+    },
+    {
+      "source": "google",
+      "target": "instagram",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "facebook",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "chatgpt",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "gemini",
+      "weight": 3
+    },
+    {
+      "source": "google",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "chinese-communist-party",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "google",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "google",
+      "target": "mistral",
+      "weight": 3
+    },
+    {
+      "source": "google",
+      "target": "anthropic",
+      "weight": 5
+    },
+    {
+      "source": "google",
+      "target": "crushon.ai",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "unknown-scammers",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "pro-kremlin-actors",
+      "weight": 1
+    },
+    {
+      "source": "google",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "unknown-large-language-model-developers",
+      "target": "unknown-scammers",
+      "weight": 2
+    },
+    {
+      "source": "microsoft",
+      "target": "amazon",
+      "weight": 3
+    },
+    {
+      "source": "microsoft",
+      "target": "instagram",
+      "weight": 1
+    },
+    {
+      "source": "microsoft",
+      "target": "facebook",
+      "weight": 1
+    },
+    {
+      "source": "microsoft",
+      "target": "bing-users",
+      "weight": 1
+    },
+    {
+      "source": "microsoft",
+      "target": "inflection",
+      "weight": 2
+    },
+    {
+      "source": "microsoft",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "microsoft",
+      "target": "mistral",
+      "weight": 3
+    },
+    {
+      "source": "microsoft",
+      "target": "anthropic",
+      "weight": 3
+    },
+    {
+      "source": "instagram",
+      "target": "facebook",
+      "weight": 5
+    },
+    {
+      "source": "instagram",
+      "target": "twitter",
+      "weight": 2
+    },
+    {
+      "source": "instagram",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "crushon.ai",
+      "target": "chai",
+      "weight": 1
+    },
+    {
+      "source": "crushon.ai",
+      "target": "anthropic",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology",
+      "target": "unknown-ai-image-generator-developer",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 1
+    },
+    {
+      "source": "unknown-deepfake-technology",
+      "target": "unknown-scammers",
+      "weight": 2
+    },
+    {
+      "source": "unknown-deepfake-technology",
+      "target": "quantum-ai",
+      "weight": 1
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "unknown",
+      "weight": 5
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "facebook",
+      "weight": 1
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "unknown-ai-developers",
+      "weight": 1
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "unknown-voice-cloning-technology",
+      "weight": 3
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "yahoo-boys",
+      "weight": 1
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "cyber-criminal-networks",
+      "weight": 1
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "quantum-ai",
+      "weight": 4
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "unknown-scammers-impersonating-elon-musk",
+      "weight": 4
+    },
+    {
+      "source": "unknown-scammers",
+      "target": "unknown-advertisers",
+      "weight": 3
+    },
+    {
+      "source": "chinese-communist-party",
+      "target": "spamouflage",
+      "weight": 1
+    },
+    {
+      "source": "chinese-communist-party",
+      "target": "russian-government",
+      "weight": 1
+    },
+    {
+      "source": "twitter",
+      "target": "facebook",
+      "weight": 5
+    },
+    {
+      "source": "eleutherai",
+      "target": "compvis-lmu",
+      "weight": 5
+    },
+    {
+      "source": "eleutherai",
+      "target": "lensa-ai",
+      "weight": 2
+    },
+    {
+      "source": "inflection",
+      "target": "you.com",
+      "weight": 2
+    },
+    {
+      "source": "inflection",
+      "target": "mistral",
+      "weight": 2
+    },
+    {
+      "source": "inflection",
+      "target": "anthropic",
+      "weight": 2
+    },
+    {
+      "source": "compvis-lmu",
+      "target": "lensa-ai",
+      "weight": 2
+    },
+    {
+      "source": "aws",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "various-social-media-accounts",
+      "target": "unknown",
+      "weight": 1
+    },
+    {
+      "source": "unknown-ai-image-generator-developer",
+      "target": "unnamed-male-student",
+      "weight": 1
+    },
+    {
+      "source": "israel-defense-forces",
+      "target": "unit-8200",
+      "weight": 2
+    },
+    {
+      "source": "unknown-voice-cloning-technology",
+      "target": "unknown-actors",
+      "weight": 2
+    },
+    {
+      "source": "you.com",
+      "target": "mistral",
+      "weight": 2
+    },
+    {
+      "source": "you.com",
+      "target": "anthropic",
+      "weight": 2
+    },
+    {
+      "source": "mistral",
+      "target": "anthropic",
+      "weight": 4
+    },
+    {
+      "source": "facebook",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "educators",
+      "target": "universities",
+      "weight": 1
+    },
+    {
+      "source": "alexa-device-owners",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "nypd",
+      "target": "clearview-ai",
+      "weight": 2
+    },
+    {
+      "source": "uber",
+      "target": "amazon",
+      "weight": 1
+    },
+    {
+      "source": "unknown",
+      "target": "unnamed-male-student",
+      "weight": 1
+    },
+    {
+      "source": "cyber-criminal-networks",
+      "target": "unknown-actors",
+      "weight": 1
+    },
+    {
+      "source": "russian-government",
+      "target": "spamouflage",
+      "weight": 1
+    },
+    {
+      "source": "anthropic",
+      "target": "researchers",
+      "weight": 1
+    },
+    {
+      "source": "anthropic",
+      "target": "amazon",
+      "weight": 1
+    }
+  ]
+}

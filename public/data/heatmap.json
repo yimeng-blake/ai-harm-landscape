@@ -1,0 +1,327 @@
+[
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation",
+    "Harm Domain":"no",
+    "count":6
+  },
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation, information and communication",
+    "Harm Domain":"maybe",
+    "count":2
+  },
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation, information and communication",
+    "Harm Domain":"no",
+    "count":4
+  },
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation, information and communication",
+    "Harm Domain":"yes",
+    "count":8
+  },
+  {
+    "Sector of Deployment":"Arts, entertainment and recreation, professional, scientific and technical activities",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education",
+    "Harm Domain":"yes",
+    "count":7
+  },
+  {
+    "Sector of Deployment":"Education, Arts, entertainment and recreation",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education, human health and social work activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education, information and communication",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education, law enforcement, public administration",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education, professional, scientific and technical activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"Education, public administration",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"accommodation and food service activities",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"accommodation and food service activities, information and communication",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"accommodation and food service activities, transportation and storage",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"accommodation and food service activities, wholesale and retail trade",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities, Education",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities, human health and social work activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities, information and communication",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities, other service activities, financial and insurance activities, Arts, entertainment and recreation, human health and social work activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"administrative and support service activities, professional, scientific and technical activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"defense",
+    "Harm Domain":"yes",
+    "count":2
+  },
+  {
+    "Sector of Deployment":"financial and insurance activities",
+    "Harm Domain":"yes",
+    "count":4
+  },
+  {
+    "Sector of Deployment":"financial and insurance activities, other",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"human health and social work activities",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"human health and social work activities",
+    "Harm Domain":"yes",
+    "count":9
+  },
+  {
+    "Sector of Deployment":"human health and social work activities, public administration",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"information and communication",
+    "Harm Domain":"maybe",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"information and communication",
+    "Harm Domain":"no",
+    "count":5
+  },
+  {
+    "Sector of Deployment":"information and communication",
+    "Harm Domain":"yes",
+    "count":36
+  },
+  {
+    "Sector of Deployment":"information and communication, Arts, entertainment and recreation",
+    "Harm Domain":"no",
+    "count":2
+  },
+  {
+    "Sector of Deployment":"information and communication, Arts, entertainment and recreation",
+    "Harm Domain":"yes",
+    "count":7
+  },
+  {
+    "Sector of Deployment":"information and communication, Education",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"information and communication, law enforcement",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"information and communication, professional, scientific and technical activities",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"information and communication, unclear",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"law enforcement",
+    "Harm Domain":"yes",
+    "count":9
+  },
+  {
+    "Sector of Deployment":"law enforcement, information and communication",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"law enforcement, information and communication",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"law enforcement, public administration",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"manufacturing",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"other",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"other",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"professional, scientific and technical activities",
+    "Harm Domain":"no",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"professional, scientific and technical activities, information and communication",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"public administration",
+    "Harm Domain":"yes",
+    "count":4
+  },
+  {
+    "Sector of Deployment":"public administration, financial and insurance activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"public administration, human health and social work activities",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"real estate activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"real estate activities, public administration",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"transportation and storage",
+    "Harm Domain":"maybe",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"transportation and storage",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"transportation and storage",
+    "Harm Domain":"yes",
+    "count":19
+  },
+  {
+    "Sector of Deployment":"transportation and storage, information and communication",
+    "Harm Domain":"yes",
+    "count":2
+  },
+  {
+    "Sector of Deployment":"transportation and storage, wholesale and retail trade",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade",
+    "Harm Domain":"maybe",
+    "count":2
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade",
+    "Harm Domain":"no",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade",
+    "Harm Domain":"yes",
+    "count":8
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade, administrative and support service activities",
+    "Harm Domain":"yes",
+    "count":1
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade, information and communication",
+    "Harm Domain":"yes",
+    "count":3
+  },
+  {
+    "Sector of Deployment":"wholesale and retail trade, transportation and storage",
+    "Harm Domain":"yes",
+    "count":3
+  }
+]

@@ -1,0 +1,206 @@
+[
+  {
+    "Topic": 0,
+    "Count": 544,
+    "Name": "0_tesla_facebook_driving_robot",
+    "Representation": [
+      "tesla",
+      "facebook",
+      "driving",
+      "robot",
+      "car",
+      "driver",
+      "self",
+      "vehicle",
+      "model",
+      "tiktok"
+    ]
+  },
+  {
+    "Topic": 1,
+    "Count": 210,
+    "Name": "1_facial_recognition_facial recognition_trump",
+    "Representation": [
+      "facial",
+      "recognition",
+      "facial recognition",
+      "trump",
+      "face",
+      "donald trump",
+      "donald",
+      "users",
+      "voices",
+      "arrest"
+    ]
+  },
+  {
+    "Topic": 2,
+    "Count": 144,
+    "Name": "2_scam_google_scammers_gemini",
+    "Representation": [
+      "scam",
+      "google",
+      "scammers",
+      "gemini",
+      "women",
+      "deepfake videos",
+      "musk",
+      "gender",
+      "woman",
+      "fraudulent"
+    ]
+  },
+  {
+    "Topic": 3,
+    "Count": 114,
+    "Name": "3_grok_drivers_uber_phishing",
+    "Representation": [
+      "grok",
+      "drivers",
+      "uber",
+      "phishing",
+      "malware",
+      "amazon",
+      "student",
+      "scams",
+      "users",
+      "fraud"
+    ]
+  },
+  {
+    "Topic": 4,
+    "Count": 113,
+    "Name": "4_chatbot_chatbots_meta_character",
+    "Representation": [
+      "chatbot",
+      "chatbots",
+      "meta",
+      "character",
+      "users",
+      "ai chatbots",
+      "ai chatbot",
+      "meta ai",
+      "pornography",
+      "deepfake pornography"
+    ]
+  },
+  {
+    "Topic": 5,
+    "Count": 108,
+    "Name": "5_algorithm_risk_amazon_medical",
+    "Representation": [
+      "algorithm",
+      "risk",
+      "amazon",
+      "medical",
+      "patients",
+      "algorithms",
+      "department",
+      "scores",
+      "care",
+      "algorithmic"
+    ]
+  },
+  {
+    "Topic": 6,
+    "Count": 73,
+    "Name": "6_youtube_instagram_recommendation_fraud",
+    "Representation": [
+      "youtube",
+      "instagram",
+      "recommendation",
+      "fraud",
+      "sex",
+      "chess",
+      "singapore",
+      "scams",
+      "users",
+      "algorithms"
+    ]
+  },
+  {
+    "Topic": 7,
+    "Count": 65,
+    "Name": "7_school_students_classmates_nude",
+    "Representation": [
+      "school",
+      "students",
+      "classmates",
+      "nude",
+      "high school",
+      "explicit",
+      "create",
+      "used ai",
+      "female",
+      "student"
+    ]
+  },
+  {
+    "Topic": 8,
+    "Count": 45,
+    "Name": "8_copilot_microsoft_investment_github",
+    "Representation": [
+      "copilot",
+      "microsoft",
+      "investment",
+      "github",
+      "fraudulent",
+      "deepfake video",
+      "scheme",
+      "endorsing",
+      "scam",
+      "access"
+    ]
+  },
+  {
+    "Topic": 9,
+    "Count": 35,
+    "Name": "9_google_chinese_books_google ai",
+    "Representation": [
+      "google",
+      "chinese",
+      "books",
+      "google ai",
+      "google search",
+      "profiles",
+      "twitter",
+      "gan",
+      "linkedin",
+      "featured"
+    ]
+  },
+  {
+    "Topic": 10,
+    "Count": 25,
+    "Name": "10_generated audio_pakistan_clip_attack",
+    "Representation": [
+      "generated audio",
+      "pakistan",
+      "clip",
+      "attack",
+      "sudan",
+      "planning",
+      "al",
+      "audio clip",
+      "mass",
+      "conflict"
+    ]
+  },
+  {
+    "Topic": 11,
+    "Count": 15,
+    "Name": "11_ukrainian_deepfake video_ukraine_russian",
+    "Representation": [
+      "ukrainian",
+      "deepfake video",
+      "ukraine",
+      "russian",
+      "disinformation",
+      "president",
+      "clip",
+      "debunked",
+      "announcing",
+      "foreign"
+    ]
+  }
+]
