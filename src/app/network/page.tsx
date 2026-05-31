@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import { fetchJSON, NetworkData, Incident } from "../../lib/data";
-import { COMMUNITY_COLORS, DONUT_PALETTE } from "../../lib/constants";
+import { COMMUNITY_COLORS } from "../../lib/constants";
 
 export default function NetworkPage() {
   const [network, setNetwork] = useState<NetworkData | null>(null);
@@ -39,21 +39,28 @@ export default function NetworkPage() {
     return ["All", ...Array.from(cats).sort()];
   }, [incidents]);
 
-  if (!network) return <div className="text-gray-400">Loading...</div>;
-
   // Filter nodes by min incidents + harm category
-  const filteredNodes = network.nodes.filter((n) => {
-    if (n.count < minIncidents) return false;
-    if (harmFilter !== "All") {
-      const cats = entityCategories[n.id];
-      if (!cats || !cats.has(harmFilter)) return false;
-    }
-    return true;
-  });
-  const filteredIds = new Set(filteredNodes.map((n) => n.id));
-  const filteredEdges = network.edges.filter(
-    (e) => filteredIds.has(e.source) && filteredIds.has(e.target)
-  );
+  const filteredNodes = useMemo(() => {
+    if (!network) return [];
+
+    return network.nodes.filter((n) => {
+      if (n.count < minIncidents) return false;
+      if (harmFilter !== "All") {
+        const cats = entityCategories[n.id];
+        if (!cats || !cats.has(harmFilter)) return false;
+      }
+      return true;
+    });
+  }, [entityCategories, harmFilter, minIncidents, network]);
+
+  const filteredEdges = useMemo(() => {
+    if (!network) return [];
+
+    const filteredIds = new Set(filteredNodes.map((n) => n.id));
+    return network.edges.filter(
+      (e) => filteredIds.has(e.source) && filteredIds.has(e.target)
+    );
+  }, [filteredNodes, network]);
 
   // Highlight logic: when an entity is selected, find its neighbors
   const neighbors = useMemo(() => {
@@ -65,6 +72,8 @@ export default function NetworkPage() {
     });
     return set;
   }, [selectedEntity, filteredEdges]);
+
+  if (!network) return <div className="text-gray-400">Loading...</div>;
 
   // Build graph traces
   const lookup = Object.fromEntries(filteredNodes.map((n) => [n.id, n]));
@@ -119,6 +128,7 @@ export default function NetworkPage() {
   const entityIncidents = selectedEntity
     ? incidents.filter((i) => i.deployers.includes(selectedEntity) || i.developers.includes(selectedEntity))
     : [];
+  const selectableNodes = [...filteredNodes].sort((a, b) => b.count - a.count).slice(0, 25);
 
   return (
     <div className="max-w-7xl">
@@ -264,7 +274,7 @@ export default function NetworkPage() {
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
           <h3 className="text-sm font-medium text-gray-300 mb-2">Select Entity</h3>
           <div className="space-y-0.5 max-h-60 overflow-y-auto">
-            {filteredNodes.sort((a, b) => b.count - a.count).slice(0, 25).map((n) => (
+            {selectableNodes.map((n) => (
               <button key={n.id} onClick={() => setSelectedEntity(selectedEntity === n.id ? null : n.id)}
                 className={`w-full text-left text-xs px-2 py-1.5 rounded transition-colors ${
                   selectedEntity === n.id ? "bg-gray-700 text-white font-medium" : "text-gray-400 hover:bg-gray-800"
