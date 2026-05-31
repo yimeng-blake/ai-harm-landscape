@@ -42,7 +42,9 @@ export interface NetworkNode {
   id: string;
   count: number;
   roles: string[];
+  primary_role: "deployer" | "harmed" | "mixed";
   community: number;
+  community_label: string;
   x: number;
   y: number;
 }

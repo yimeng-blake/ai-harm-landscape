@@ -54,3 +54,22 @@ export const DONUT_PALETTE = [
   "#DDA0DD", "#F7DC6F", "#FF8C94", "#85C1E9", "#82E0AA",
   "#F8C471", "#BB8FCE", "#AED6F1", "#F5B7B1", "#A2D9CE",
 ];
+
+export const COMMUNITY_COLORS: Record<number, string> = {
+  0: "#FF6B6B",  // Big Tech
+  1: "#4ECDC4",  // Surveillance & Policing
+  2: "#45B7D1",  // Students & Minors
+  3: "#FFEAA7",  // LLM Users
+  4: "#DDA0DD",  // Generative AI
+  5: "#96CEB4",  // Education
+  6: "#F7DC6F",  // Workplace
+  7: "#FF8C94",  // Cybercrime
+  [-1]: "#555555", // Other
+};
+
+export const ROLE_COLORS: Record<string, string> = {
+  deployer: "#FF6B6B",
+  developer: "#FF6B6B",
+  harmed: "#4ECDC4",
+  mixed: "#FFEAA7",
+};
