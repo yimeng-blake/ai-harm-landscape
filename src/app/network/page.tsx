@@ -174,12 +174,12 @@ export default function NetworkPage() {
             { x: edgeX, y: edgeY, type: "scatter", mode: "lines",
               line: { width: 0.3, color: neighbors ? "rgba(100,100,100,0.08)" : "rgba(150,150,150,0.2)" },
               hoverinfo: "none" },
-            // Highlight edges
-            ...(highlightEdgeX.length > 0 ? [{
-              x: highlightEdgeX, y: highlightEdgeY, type: "scatter" as const, mode: "lines" as const,
+            // Highlight edges (always present, empty when no selection)
+            { x: highlightEdgeX.length > 0 ? highlightEdgeX : [null],
+              y: highlightEdgeY.length > 0 ? highlightEdgeY : [null],
+              type: "scatter", mode: "lines",
               line: { width: 1.5, color: "rgba(255,255,255,0.5)" },
-              hoverinfo: "none" as const,
-            }] : []),
+              hoverinfo: "none" },
             // Nodes
             { x: filteredNodes.map((n) => n.x),
               y: filteredNodes.map((n) => n.y),
@@ -201,16 +201,17 @@ export default function NetworkPage() {
             height: 550,
             margin: { l: 0, r: 0, t: 0, b: 0 },
             showlegend: false, hovermode: "closest",
-            xaxis: { showgrid: false, zeroline: false, showticklabels: false },
-            yaxis: { showgrid: false, zeroline: false, showticklabels: false },
+            xaxis: { showgrid: false, zeroline: false, showticklabels: false, fixedrange: true },
+            yaxis: { showgrid: false, zeroline: false, showticklabels: false, fixedrange: true },
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
+            dragmode: false,
             annotations: [
               { x: -1.5, y: 1.3, text: "← Deployers / Developers", showarrow: false, font: { size: 10, color: "#666" } },
               { x: 1.5, y: 1.3, text: "Harmed Parties →", showarrow: false, font: { size: 10, color: "#666" } },
             ],
           }}
-          config={{ displayModeBar: false }}
-          style={{ width: "100%", cursor: "pointer" }}
+          config={{ displayModeBar: false, scrollZoom: false }}
+          style={{ width: "100%" }}
         />
         <p className="text-xs text-gray-600 mt-2">Click an entity in the list below to highlight its connections.</p>
       </div>
