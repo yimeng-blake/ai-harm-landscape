@@ -1,62 +1,102 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
-import TaxonomyBreakdown from "../../components/TaxonomyBreakdown";
+import TaxonomyBreakdown, { TaxonomyTab } from "../../components/TaxonomyBreakdown";
 import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, TimelineRow, Incident } from "../../lib/data";
-import { CATEGORY_COLORS } from "../../lib/constants";
+import { CATEGORY_COLORS, DONUT_PALETTE } from "../../lib/constants";
+
+// Map taxonomy tab to the field used for grouping
+const TAXONOMY_FIELD: Record<TaxonomyTab, keyof Incident> = {
+  MIT: "Risk Domain",
+  GMF: "Known AI Goal",
+  CSET: "Sector of Deployment",
+};
+
+const TAXONOMY_LABEL: Record<TaxonomyTab, string> = {
+  MIT: "MIT AI Risk Taxonomy",
+  GMF: "GMF AI Goal",
+  CSET: "CSET Sector of Deployment",
+};
+
+function cleanLabel(label: string): string {
+  // Strip "1. ", "4. " prefixes from MIT taxonomy
+  return label.replace(/^\d+\.\s*/, "");
+}
 
 export default function TimelinePage() {
-  const [timeline, setTimeline] = useState<TimelineRow[]>([]);
   const [incidents, setIncidents] = useState<Incident[]>([]);
   const [yearRange, setYearRange] = useState<[number, number]>([2012, 2026]);
   const [showUnclassified, setShowUnclassified] = useState(false);
+  const [taxonomyTab, setTaxonomyTab] = useState<TaxonomyTab>("MIT");
 
   useEffect(() => {
-    fetchJSON<TimelineRow[]>("/data/timeline.json").then(setTimeline);
     fetchJSON<Incident[]>("/data/incidents.json").then(setIncidents);
   }, []);
 
-  if (!timeline.length) return <div className="text-gray-400">Loading...</div>;
+  // Compute timeline data from incidents based on selected taxonomy
+  const { traces, barYears, barCounts, categories } = useMemo(() => {
+    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], categories: [] };
 
-  // Filter
-  const categories = [...new Set(timeline.map((r) => r.risk_category))].filter(
-    (c) => showUnclassified || c !== "Unclassified"
-  );
-  const filtered = timeline.filter(
-    (r) => r.year >= yearRange[0] && r.year <= yearRange[1] && categories.includes(r.risk_category)
-  );
+    const field = TAXONOMY_FIELD[taxonomyTab];
+    const filteredIncidents = incidents.filter(
+      (i) => i.year >= yearRange[0] && i.year <= yearRange[1]
+    );
 
-  // Build traces for stacked area
-  const traces = categories.map((cat) => {
-    const catData = filtered.filter((r) => r.risk_category === cat);
-    const years = [...new Set(filtered.map((r) => r.year))].sort();
-    const countByYear: Record<number, number> = {};
-    catData.forEach((r) => { countByYear[r.year] = r.count; });
-    return {
+    // Group by year + category
+    const grouped: Record<string, Record<number, number>> = {};
+    filteredIncidents.forEach((inc) => {
+      let rawVal = inc[field] as string | null;
+      if (!rawVal) rawVal = "Unclassified";
+      // GMF field can be comma-separated - take the first value
+      const val = rawVal.split(",")[0].trim();
+      const label = cleanLabel(val);
+      if (!showUnclassified && label === "Unclassified") return;
+      if (!grouped[label]) grouped[label] = {};
+      grouped[label][inc.year] = (grouped[label][inc.year] || 0) + 1;
+    });
+
+    // Sort categories by total count
+    const catEntries = Object.entries(grouped)
+      .map(([cat, yearMap]) => ({ cat, total: Object.values(yearMap).reduce((s, v) => s + v, 0), yearMap }))
+      .sort((a, b) => b.total - a.total);
+
+    // Limit to top 10 categories for readability
+    const topCats = catEntries.slice(0, 10);
+    const years = [...new Set(filteredIncidents.map((i) => i.year))].sort();
+
+    const traces = topCats.map((entry, i) => ({
       x: years,
-      y: years.map((y) => countByYear[y] || 0),
+      y: years.map((y) => entry.yearMap[y] || 0),
       type: "scatter" as const,
       mode: "lines" as const,
-      name: cat,
+      name: entry.cat,
       stackgroup: "one",
       line: { width: 0.5 },
-      fillcolor: (CATEGORY_COLORS[cat] || "#666") + "AA",
-      marker: { color: CATEGORY_COLORS[cat] || "#666" },
-    };
-  });
+      fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
+      marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+    }));
 
-  // Annual totals bar
-  const annualTotals: Record<number, number> = {};
-  filtered.forEach((r) => { annualTotals[r.year] = (annualTotals[r.year] || 0) + r.count; });
-  const barYears = Object.keys(annualTotals).map(Number).sort();
-  const barCounts = barYears.map((y) => annualTotals[y]);
+    // Annual totals
+    const annualTotals: Record<number, number> = {};
+    filteredIncidents.forEach((i) => {
+      if (!showUnclassified && !i[field]) return;
+      annualTotals[i.year] = (annualTotals[i.year] || 0) + 1;
+    });
+    const barYears = Object.keys(annualTotals).map(Number).sort();
+    const barCounts = barYears.map((y) => annualTotals[y]);
+
+    return { traces, barYears, barCounts, categories: topCats.map((c) => c.cat) };
+  }, [incidents, yearRange, showUnclassified, taxonomyTab]);
+
+  if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
     <div className="max-w-6xl">
       <h1 className="text-3xl font-bold mb-2">📈 AI Incidents Timeline</h1>
       <p className="text-gray-400 mb-6">
-        Incident volume over time by MIT AI Risk Taxonomy category. Notice the exponential growth after 2022.
+        Incident volume over time grouped by <strong className="text-white">{TAXONOMY_LABEL[taxonomyTab]}</strong>.
+        Switch taxonomy below to change the grouping.
       </p>
 
       {/* Controls */}
@@ -103,11 +143,13 @@ export default function TimelinePage() {
         />
       </div>
 
-      {/* Taxonomy Breakdown Donuts */}
+      {/* Taxonomy Breakdown Donuts - drives the timeline grouping */}
       {incidents.length > 0 && (
         <div className="mb-6">
           <TaxonomyBreakdown
             incidents={incidents.filter((i) => i.year >= yearRange[0] && i.year <= yearRange[1])}
+            activeTab={taxonomyTab}
+            onTabChange={setTaxonomyTab}
           />
         </div>
       )}

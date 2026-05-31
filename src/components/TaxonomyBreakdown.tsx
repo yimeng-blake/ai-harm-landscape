@@ -182,16 +182,28 @@ function CSETTab({ incidents }: Props) {
   );
 }
 
-export default function TaxonomyBreakdown({ incidents }: Props) {
-  const [tab, setTab] = useState<Tab>("MIT");
+export type TaxonomyTab = "MIT" | "GMF" | "CSET";
+
+interface BreakdownProps extends Props {
+  activeTab?: TaxonomyTab;
+  onTabChange?: (tab: TaxonomyTab) => void;
+}
+
+export default function TaxonomyBreakdown({ incidents, activeTab, onTabChange }: BreakdownProps) {
+  const [internalTab, setInternalTab] = useState<TaxonomyTab>("MIT");
+  const tab = activeTab ?? internalTab;
+  const handleTab = (t: TaxonomyTab) => {
+    setInternalTab(t);
+    onTabChange?.(t);
+  };
 
   return (
     <div className="bg-gray-900 rounded-xl border border-gray-800 p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-white">Taxonomy Breakdown</h3>
         <div className="flex gap-1 bg-gray-800 rounded-lg p-1">
-          {(["MIT", "GMF", "CSET"] as Tab[]).map((t) => (
-            <button key={t} onClick={() => setTab(t)}
+          {(["MIT", "GMF", "CSET"] as TaxonomyTab[]).map((t) => (
+            <button key={t} onClick={() => handleTab(t)}
               className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
                 tab === t ? "bg-gray-700 text-white" : "text-gray-400 hover:text-white"
               }`}>
