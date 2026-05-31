@@ -161,6 +161,10 @@ export default function NetworkPage() {
           {filteredNodes.length} entities · {filteredEdges.length} connections
         </span>
       </div>
+      <p className="text-xs text-gray-500 mb-4">
+        The <strong className="text-gray-300">min. incidents</strong> slider controls how many times an entity must appear in the database to be shown.
+        Raise it to focus on major repeat actors; lower it to reveal smaller organizations.
+      </p>
 
       {/* Community Legend */}
       <div className="flex flex-wrap gap-3 mb-4">
