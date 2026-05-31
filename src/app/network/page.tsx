@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
-import { fetchJSON, NetworkData, NetworkNode, Incident } from "../../lib/data";
-import { COMMUNITY_COLORS, ROLE_COLORS, DONUT_PALETTE } from "../../lib/constants";
+import { fetchJSON, NetworkData, Incident } from "../../lib/data";
+import { COMMUNITY_COLORS, DONUT_PALETTE } from "../../lib/constants";
 
 export default function NetworkPage() {
   const [network, setNetwork] = useState<NetworkData | null>(null);
   const [incidents, setIncidents] = useState<Incident[]>([]);
-  const [minIncidents, setMinIncidents] = useState(5);
+  const [minIncidents, setMinIncidents] = useState(10);
   const [selectedEntity, setSelectedEntity] = useState<string | null>(null);
   const [harmFilter, setHarmFilter] = useState<string>("All");
 
@@ -93,7 +93,7 @@ export default function NetworkPage() {
     return neighbors.has(n.id) ? 1.0 : 0.12;
   });
   const nodeColors = filteredNodes.map((n) =>
-    COMMUNITY_COLORS[n.community] || "#555"
+    COMMUNITY_COLORS[n.community] ?? "#555555"
   );
   const nodeSizes = filteredNodes.map((n) => Math.max(8, Math.min(50, n.count * 1.2)));
   const labelThreshold = Math.max(minIncidents + 3, 8);

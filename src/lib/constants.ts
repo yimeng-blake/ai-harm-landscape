@@ -64,7 +64,7 @@ export const COMMUNITY_COLORS: Record<number, string> = {
   5: "#96CEB4",  // Education
   6: "#F7DC6F",  // Workplace
   7: "#FF8C94",  // Cybercrime
-  [-1]: "#555555", // Other
+  [-1 as unknown as number]: "#555555", // Other
 };
 
 export const ROLE_COLORS: Record<string, string> = {
