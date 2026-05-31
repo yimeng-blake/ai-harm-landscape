@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, Incident, TopicInfo } from "../../lib/data";
-import { TOPIC_LABELS, TOPIC_COLORS, DONUT_PALETTE } from "../../lib/constants";
+import { TOPIC_LABELS, TOPIC_COLORS } from "../../lib/constants";
 
 export default function TopicsPage() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
@@ -31,46 +31,63 @@ export default function TopicsPage() {
     return incidents.filter((i) => i.risk_category === harmFilter);
   }, [incidents, harmFilter]);
 
-  if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
-
-  const topics = [...new Set(filteredIncidents.map((i) => i.topic))].filter((t) => t !== -1).sort();
+  const topics = useMemo(
+    () => [...new Set(filteredIncidents.map((i) => i.topic))]
+      .filter((t) => t !== -1)
+      .sort((a, b) => a - b),
+    [filteredIncidents]
+  );
 
   // Build scatter traces
-  const scatterTraces = topics.map((topicId) => {
-    const pts = filteredIncidents.filter((i) => i.topic === topicId);
-    const isSelected = selectedTopic === null || selectedTopic === topicId;
-    return {
-      x: pts.map((p) => p.umap_x),
-      y: pts.map((p) => p.umap_y),
-      customdata: pts.map((p) => [p.title, p.year, p.risk_category]),
-      type: "scatter" as const,
-      mode: "markers" as const,
-      name: TOPIC_LABELS[topicId] || `Topic ${topicId}`,
-      marker: {
-        color: TOPIC_COLORS[topicId % TOPIC_COLORS.length],
-        size: 7,
-        opacity: isSelected ? 0.85 : 0.15,
-        line: { width: 0.3, color: "rgba(255,255,255,0.4)" },
-      },
-      hovertemplate: "<b>%{customdata[0]}</b><br>Year: %{customdata[1]}<br>Category: %{customdata[2]}<extra></extra>",
-    };
-  });
+  const scatterTraces = useMemo(
+    () => topics.map((topicId) => {
+      const pts = filteredIncidents.filter((i) => i.topic === topicId);
+      const isSelected = selectedTopic === null || selectedTopic === topicId;
+      return {
+        x: pts.map((p) => p.umap_x),
+        y: pts.map((p) => p.umap_y),
+        customdata: pts.map((p) => [p.title, p.year, p.risk_category]),
+        type: "scatter" as const,
+        mode: "markers" as const,
+        name: TOPIC_LABELS[topicId] || `Topic ${topicId}`,
+        marker: {
+          color: TOPIC_COLORS[topicId % TOPIC_COLORS.length],
+          size: 7,
+          opacity: isSelected ? 0.85 : 0.15,
+          line: { width: 0.3, color: "rgba(255,255,255,0.4)" },
+        },
+        hovertemplate: "<b>%{customdata[0]}</b><br>Year: %{customdata[1]}<br>Category: %{customdata[2]}<extra></extra>",
+      };
+    }),
+    [filteredIncidents, selectedTopic, topics]
+  );
 
   // Topic counts from filtered data
-  const topicCounts: Record<number, number> = {};
-  filteredIncidents.forEach((i) => { if (i.topic !== -1) topicCounts[i.topic] = (topicCounts[i.topic] || 0) + 1; });
+  const topicCounts = useMemo(() => {
+    const counts: Record<number, number> = {};
+    filteredIncidents.forEach((i) => {
+      if (i.topic !== -1) counts[i.topic] = (counts[i.topic] || 0) + 1;
+    });
+    return counts;
+  }, [filteredIncidents]);
 
   // YoY growth per topic (compare last 2 years)
-  const topicGrowth: Record<number, number> = {};
-  topics.forEach((t) => {
-    const thisYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2025).length;
-    const lastYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2023 && i.year < 2025).length;
-    topicGrowth[t] = lastYear > 0 ? Math.round(((thisYear - lastYear) / lastYear) * 100) : (thisYear > 0 ? 100 : 0);
-  });
+  const topicGrowth = useMemo(() => {
+    const growth: Record<number, number> = {};
+    topics.forEach((t) => {
+      const thisYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2025).length;
+      const lastYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2023 && i.year < 2025).length;
+      growth[t] = lastYear > 0 ? Math.round(((thisYear - lastYear) / lastYear) * 100) : (thisYear > 0 ? 100 : 0);
+    });
+    return growth;
+  }, [filteredIncidents, topics]);
 
   // Selected topic details
   const selInfo = topicInfo.find((t) => t.Topic === selectedTopic);
-  const selIncidents = selectedTopic !== null ? filteredIncidents.filter((i) => i.topic === selectedTopic) : [];
+  const selIncidents = useMemo(
+    () => selectedTopic !== null ? filteredIncidents.filter((i) => i.topic === selectedTopic) : [],
+    [filteredIncidents, selectedTopic]
+  );
 
   // Top entities for selected topic
   const selEntities = useMemo(() => {
@@ -95,10 +112,11 @@ export default function TopicsPage() {
     return yearTopicCounts;
   }, [filteredIncidents]);
 
-  const timeYears = Object.keys(topicsOverTime).map(Number).sort();
+  const timeYears = Object.keys(topicsOverTime).map(Number).sort((a, b) => a - b);
   // Top 8 topics by total count for the time chart
-  const topTopics = topics
-    .sort((a, b) => (topicCounts[b] || 0) - (topicCounts[a] || 0))
+  const topicsByCount = [...topics]
+    .sort((a, b) => (topicCounts[b] || 0) - (topicCounts[a] || 0));
+  const topTopics = topicsByCount
     .slice(0, 8);
 
   const timeTraces = topTopics.map((topicId) => ({
@@ -112,6 +130,11 @@ export default function TopicsPage() {
     fillcolor: TOPIC_COLORS[topicId % TOPIC_COLORS.length] + "AA",
     marker: { color: TOPIC_COLORS[topicId % TOPIC_COLORS.length] },
   }));
+  const recentSelIncidents = [...selIncidents]
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 8);
+
+  if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
     <div className="max-w-7xl">
@@ -123,7 +146,7 @@ export default function TopicsPage() {
       </p>
 
       {/* Filter */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <label className="text-sm text-gray-400">
           Filter by harm type:
           <select value={harmFilter} onChange={(e) => { setHarmFilter(e.target.value); setSelectedTopic(null); }}
@@ -163,8 +186,8 @@ export default function TopicsPage() {
 
       {/* Topic Cards with growth stats */}
       <h2 className="text-xl font-semibold mb-3">Themes</h2>
-      <div className="grid grid-cols-3 gap-3 mb-6">
-        {topics.sort((a, b) => (topicCounts[b] || 0) - (topicCounts[a] || 0)).map((t) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-6">
+        {topicsByCount.map((t) => {
           const info = topicInfo.find((ti) => ti.Topic === t);
           const active = selectedTopic === t;
           const growth = topicGrowth[t] || 0;
@@ -173,13 +196,13 @@ export default function TopicsPage() {
               className={`text-left p-4 rounded-lg border transition-all ${
                 active ? "border-white bg-gray-800" : "border-gray-800 bg-gray-900 hover:border-gray-600"
               }`}>
-              <div className="flex items-center justify-between mb-1">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: TOPIC_COLORS[t % TOPIC_COLORS.length] }} />
-                  <span className="text-sm font-medium text-white">{TOPIC_LABELS[t] || `Topic ${t}`}</span>
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <div className="min-w-0 flex items-start gap-2">
+                  <span className="mt-1 w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: TOPIC_COLORS[t % TOPIC_COLORS.length] }} />
+                  <span className="text-sm font-medium text-white leading-snug break-words">{TOPIC_LABELS[t] || `Topic ${t}`}</span>
                 </div>
                 {growth !== 0 && (
-                  <span className={`text-xs font-medium ${growth > 0 ? "text-red-400" : "text-green-400"}`}>
+                  <span className={`shrink-0 text-xs font-medium ${growth > 0 ? "text-red-400" : "text-green-400"}`}>
                     {growth > 0 ? "+" : ""}{growth}%
                   </span>
                 )}
@@ -196,9 +219,9 @@ export default function TopicsPage() {
       {selectedTopic !== null && selInfo && (
         <div className="bg-gray-900 rounded-xl border border-gray-800 p-6 mb-6">
           <h3 className="text-lg font-semibold mb-4">{TOPIC_LABELS[selectedTopic]}</h3>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {/* Word cloud */}
-            <div>
+            <div className="min-w-0">
               <WordCloud
                 title="Topic Word Cloud"
                 words={extractWords(
@@ -210,7 +233,7 @@ export default function TopicsPage() {
             </div>
 
             {/* Top entities for this topic */}
-            <div>
+            <div className="min-w-0">
               <h4 className="text-sm text-gray-400 mb-2">Top Entities in This Theme</h4>
               {selEntities.length > 0 ? (
                 <PlotlyChart
@@ -235,10 +258,10 @@ export default function TopicsPage() {
             </div>
 
             {/* Recent incidents */}
-            <div>
+            <div className="min-w-0">
               <h4 className="text-sm text-gray-400 mb-2">Recent Incidents ({selIncidents.length} total)</h4>
               <div className="max-h-64 overflow-y-auto space-y-2">
-                {selIncidents.sort((a, b) => b.year - a.year).slice(0, 8).map((inc) => (
+                {recentSelIncidents.map((inc) => (
                   <div key={inc.incident_id} className="text-xs border-b border-gray-800 pb-1.5">
                     <div className="text-white">{inc.title}</div>
                     <div className="text-gray-600">{inc.date} · {inc.risk_category}</div>
