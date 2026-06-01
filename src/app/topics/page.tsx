@@ -10,6 +10,7 @@ export default function TopicsPage() {
   const [topicInfo, setTopicInfo] = useState<TopicInfo[]>([]);
   const [selectedTopic, setSelectedTopic] = useState<number | null>(null);
   const [harmFilter, setHarmFilter] = useState<string>("All");
+  const [yearRange, setYearRange] = useState<[number, number]>([2012, 2026]);
 
   useEffect(() => {
     fetchJSON<Incident[]>("/data/incidents.json").then(setIncidents);
@@ -25,11 +26,14 @@ export default function TopicsPage() {
     return ["All", ...Array.from(cats).sort()];
   }, [incidents]);
 
-  // Filtered incidents by harm type
+  // Filtered incidents by harm type + year range
   const filteredIncidents = useMemo(() => {
-    if (harmFilter === "All") return incidents;
-    return incidents.filter((i) => i.risk_category === harmFilter);
-  }, [incidents, harmFilter]);
+    let filtered = incidents.filter((i) => i.year >= yearRange[0] && i.year <= yearRange[1]);
+    if (harmFilter !== "All") {
+      filtered = filtered.filter((i) => i.risk_category === harmFilter);
+    }
+    return filtered;
+  }, [incidents, harmFilter, yearRange]);
 
   const topics = useMemo(
     () => [...new Set(filteredIncidents.map((i) => i.topic))]
@@ -145,10 +149,20 @@ export default function TopicsPage() {
         Click a theme card to inspect it.
       </p>
 
-      {/* Filter */}
-      <div className="flex flex-wrap items-center gap-4 mb-6">
+      {/* Filters */}
+      <div className="flex flex-wrap items-center gap-6 mb-6">
         <label className="text-sm text-gray-400">
-          Filter by harm type:
+          Year range:
+          <input type="number" value={yearRange[0]} min={2005} max={2026}
+            onChange={(e) => { setYearRange([+e.target.value, yearRange[1]]); setSelectedTopic(null); }}
+            className="ml-2 w-20 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-white text-sm" />
+          <span className="mx-1">–</span>
+          <input type="number" value={yearRange[1]} min={2005} max={2026}
+            onChange={(e) => { setYearRange([yearRange[0], +e.target.value]); setSelectedTopic(null); }}
+            className="w-20 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-white text-sm" />
+        </label>
+        <label className="text-sm text-gray-400">
+          Harm type:
           <select value={harmFilter} onChange={(e) => { setHarmFilter(e.target.value); setSelectedTopic(null); }}
             className="ml-2 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-white text-sm">
             {riskCategories.map((cat) => (
