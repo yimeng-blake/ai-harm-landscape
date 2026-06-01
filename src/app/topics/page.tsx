@@ -75,16 +75,28 @@ export default function TopicsPage() {
     return counts;
   }, [filteredIncidents]);
 
-  // YoY growth per topic (compare last 2 years)
+  // Growth per topic: compare first half vs second half of selected range
   const topicGrowth = useMemo(() => {
-    const growth: Record<number, number> = {};
+    const growth: Record<number, number | null> = {};
+    const midpoint = Math.floor((yearRange[0] + yearRange[1]) / 2);
+    // Need at least 2 years of range to compute growth
+    if (yearRange[1] - yearRange[0] < 2) {
+      topics.forEach((t) => { growth[t] = null; });
+      return growth;
+    }
     topics.forEach((t) => {
-      const thisYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2025).length;
-      const lastYear = filteredIncidents.filter((i) => i.topic === t && i.year >= 2023 && i.year < 2025).length;
-      growth[t] = lastYear > 0 ? Math.round(((thisYear - lastYear) / lastYear) * 100) : (thisYear > 0 ? 100 : 0);
+      const firstHalf = filteredIncidents.filter((i) => i.topic === t && i.year >= yearRange[0] && i.year < midpoint).length;
+      const secondHalf = filteredIncidents.filter((i) => i.topic === t && i.year >= midpoint && i.year <= yearRange[1]).length;
+      if (firstHalf === 0 && secondHalf === 0) {
+        growth[t] = null;
+      } else if (firstHalf === 0) {
+        growth[t] = 100; // new topic
+      } else {
+        growth[t] = Math.round(((secondHalf - firstHalf) / firstHalf) * 100);
+      }
     });
     return growth;
-  }, [filteredIncidents, topics]);
+  }, [filteredIncidents, topics, yearRange]);
 
   // Selected topic details
   const selInfo = topicInfo.find((t) => t.Topic === selectedTopic);
@@ -204,7 +216,7 @@ export default function TopicsPage() {
         {topicsByCount.map((t) => {
           const info = topicInfo.find((ti) => ti.Topic === t);
           const active = selectedTopic === t;
-          const growth = topicGrowth[t] || 0;
+          const growth = topicGrowth[t] ?? null;
           return (
             <button key={t} onClick={() => setSelectedTopic(active ? null : t)}
               className={`text-left p-4 rounded-lg border transition-all ${
@@ -215,7 +227,7 @@ export default function TopicsPage() {
                   <span className="mt-1 w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: TOPIC_COLORS[t % TOPIC_COLORS.length] }} />
                   <span className="text-sm font-medium text-white leading-snug break-words">{TOPIC_LABELS[t] || `Topic ${t}`}</span>
                 </div>
-                {growth !== 0 && (
+                {growth !== null && growth !== 0 && (
                   <span className={`shrink-0 text-xs font-medium ${growth > 0 ? "text-red-400" : "text-green-400"}`}>
                     {growth > 0 ? "+" : ""}{growth}%
                   </span>
