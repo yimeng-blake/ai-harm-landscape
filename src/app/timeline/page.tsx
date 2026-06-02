@@ -74,17 +74,22 @@ export default function TimelinePage() {
     // Convert month keys to Date objects for Plotly (first of each month)
     const xDates = months.map((m) => `${m}-01`);
 
-    const traces = topCats.map((entry, i) => ({
-      x: xDates,
-      y: months.map((m) => entry.monthMap[m] || 0),
-      type: "scatter" as const,
-      mode: "lines" as const,
-      name: entry.cat,
-      stackgroup: "one",
-      line: { width: 0.5, shape: "spline" as const, smoothing: 1.3 },
-      fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
-      marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
-    }));
+    const traces = topCats.map((entry, i) => {
+      const rawY = months.map((m) => entry.monthMap[m] || 0);
+      let cumulative = 0;
+      const cumY = rawY.map((v) => { cumulative += v; return cumulative; });
+      return {
+        x: xDates,
+        y: cumY,
+        type: "scatter" as const,
+        mode: "lines" as const,
+        name: entry.cat,
+        stackgroup: "one",
+        line: { width: 0.5 },
+        fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
+        marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+      };
+    });
 
     // Annual totals (for the bar chart)
     const annualTotals: Record<number, number> = {};
@@ -95,28 +100,24 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    // Direct band labels: place at the month where each category's band is thickest
+    // End-of-line labels: place each category's name at the right edge of the chart,
+    // at the midpoint of its band in the final stacked cumulative value.
+    const lastDate = xDates[xDates.length - 1];
+    const finalTotals = topCats.map((e) => e.total);
     const areaLabels = topCats.map((entry, i) => {
-      let peakMonth = months[0];
-      let peakV = -1;
-      months.forEach((m) => { const v = entry.monthMap[m] || 0; if (v > peakV) { peakV = v; peakMonth = m; } });
-      if (peakV <= 0) return null;
-      const below = topCats.slice(0, i).reduce((s, e) => s + (e.monthMap[peakMonth] || 0), 0);
-      const mid = below + peakV / 2;
+      if (entry.total <= 0) return null;
+      const below = finalTotals.slice(0, i).reduce((s, v) => s + v, 0);
+      const mid = below + entry.total / 2;
       return {
-        x: `${peakMonth}-01`, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
-        text: entry.cat,
+        x: lastDate, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
+        text: "  " + (entry.cat.length > 22 ? entry.cat.slice(0, 21) + "\u2026" : entry.cat),
         showarrow: false,
         font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
-        bgcolor: "rgba(15,23,42,0.7)", borderpad: 2,
       };
     }).filter((a): a is NonNullable<typeof a> => a !== null);
 
-    // y-axis ceiling: tallest stacked total across months
-    const yMax = months.reduce((mx, m) => {
-      const total = topCats.reduce((s, e) => s + (e.monthMap[m] || 0), 0);
-      return Math.max(mx, total);
-    }, 0);
+    // y-axis ceiling: sum of all categories' totals (the stacked cumulative max at the last month)
+    const yMax = topCats.reduce((s, e) => s + e.total, 0);
 
     return { traces, barYears, barCounts, areaLabels, yMax };
   }, [incidents, yearRange, showUnclassified, taxonomyTab]);
@@ -161,8 +162,8 @@ export default function TimelinePage() {
             margin: { l: 50, r: 150, t: 20, b: 40 },
             xaxis: { title: "Month", showgrid: false, color: "#888", type: "date" as const },
             yaxis: {
-              title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
-              range: [0, Math.ceil((yMax || 0) / 10) * 10 + 10],
+              title: "Cumulative Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
+              range: [0, Math.ceil((yMax || 0) / 100) * 100 + 100],
             },
             hovermode: "x unified",
             hoverlabel: HOVERLABEL,
