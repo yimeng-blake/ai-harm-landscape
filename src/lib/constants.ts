@@ -96,3 +96,11 @@ export const ROLE_COLORS: Record<string, string> = {
 // Semantic shortcuts for the recurring "who acted" vs "who was harmed" bar charts.
 export const DEPLOYER_COLOR = ROLE_COLORS.deployer;
 export const HARMED_COLOR = ROLE_COLORS.harmed;
+
+// Shared tooltip styling (Fixes 2/3/5/6): one opaque, readable hover label used by every chart.
+export const HOVERLABEL = {
+  bgcolor: "#0f172a",
+  bordercolor: "#334155",
+  font: { color: "#e5e7eb", size: 12 },
+  namelength: -1,
+};

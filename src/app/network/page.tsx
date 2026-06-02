@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import { fetchJSON, NetworkData, Incident } from "../../lib/data";
-import { COMMUNITY_COLORS, DEPLOYER_COLOR, HARMED_COLOR } from "../../lib/constants";
+import { COMMUNITY_COLORS, DEPLOYER_COLOR, HARMED_COLOR, HOVERLABEL } from "../../lib/constants";
 
 type GraphLayout = "role" | "force" | "circular" | "community";
 const LAYOUT_OPTIONS: { value: GraphLayout; label: string }[] = [
@@ -240,6 +240,7 @@ export default function NetworkPage() {
             height: 550,
             margin: { l: 0, r: 0, t: 0, b: 0 },
             showlegend: false, hovermode: "closest",
+            hoverlabel: HOVERLABEL,
             xaxis: { showgrid: false, zeroline: false, showticklabels: false },
             yaxis: { showgrid: false, zeroline: false, showticklabels: false },
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
@@ -261,9 +262,9 @@ export default function NetworkPage() {
       </div>
 
       {/* Bottom Panel: Stats + Detail */}
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {/* Top Deployers/Developers */}
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 min-w-0">
           <h3 className="text-sm font-medium text-gray-300 mb-3">Top Deployers</h3>
           <PlotlyChart
             data={[{
@@ -271,11 +272,13 @@ export default function NetworkPage() {
               y: topDeployers.map((n) => n.id.replace(/-/g, " ")),
               type: "bar", orientation: "h",
               marker: { color: DEPLOYER_COLOR },
+              hovertemplate: "%{y}: %{x} incidents<extra></extra>",
             }]}
             layout={{
-              height: 240, margin: { l: 90, r: 10, t: 5, b: 5 },
-              xaxis: { color: "#888", showgrid: false },
-              yaxis: { autorange: "reversed", color: "#ccc", tickfont: { size: 10 } },
+              height: 240, margin: { l: 10, r: 10, t: 5, b: 5 },
+              xaxis: { color: "#888", showgrid: false, automargin: true },
+              yaxis: { autorange: "reversed", color: "#ccc", tickfont: { size: 10 }, automargin: true },
+              hoverlabel: HOVERLABEL,
               paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { color: "#ccc" },
             }}
             config={{ displayModeBar: false }}
@@ -284,7 +287,7 @@ export default function NetworkPage() {
         </div>
 
         {/* Top Harmed */}
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 min-w-0">
           <h3 className="text-sm font-medium text-gray-300 mb-3">Most Harmed</h3>
           <PlotlyChart
             data={[{
@@ -292,11 +295,13 @@ export default function NetworkPage() {
               y: topHarmed.map((n) => n.id.replace(/-/g, " ")),
               type: "bar", orientation: "h",
               marker: { color: HARMED_COLOR },
+              hovertemplate: "%{y}: %{x} incidents<extra></extra>",
             }]}
             layout={{
-              height: 240, margin: { l: 90, r: 10, t: 5, b: 5 },
-              xaxis: { color: "#888", showgrid: false },
-              yaxis: { autorange: "reversed", color: "#ccc", tickfont: { size: 10 } },
+              height: 240, margin: { l: 10, r: 10, t: 5, b: 5 },
+              xaxis: { color: "#888", showgrid: false, automargin: true },
+              yaxis: { autorange: "reversed", color: "#ccc", tickfont: { size: 10 }, automargin: true },
+              hoverlabel: HOVERLABEL,
               paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { color: "#ccc" },
             }}
             config={{ displayModeBar: false }}
@@ -305,7 +310,7 @@ export default function NetworkPage() {
         </div>
 
         {/* Entity List (clickable) */}
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 min-w-0">
           <h3 className="text-sm font-medium text-gray-300 mb-2">Select Entity</h3>
           <div className="space-y-0.5 max-h-60 overflow-y-auto">
             {selectableNodes.map((n) => (
@@ -321,7 +326,7 @@ export default function NetworkPage() {
         </div>
 
         {/* Selected Entity Detail */}
-        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
+        <div className="bg-gray-900 rounded-xl border border-gray-800 p-4 min-w-0">
           {selectedEntity ? (
             <>
               <h3 className="text-sm font-medium text-white mb-1">{selectedEntity.replace(/-/g, " ")}</h3>

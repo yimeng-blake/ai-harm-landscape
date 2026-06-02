@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, Incident, TopicInfo } from "../../lib/data";
-import { TOPIC_LABELS, TOPIC_COLORS } from "../../lib/constants";
+import { TOPIC_LABELS, TOPIC_COLORS, HOVERLABEL } from "../../lib/constants";
 
 export default function TopicsPage() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
@@ -168,20 +168,24 @@ export default function TopicsPage() {
     .sort((a, b) => b.year - a.year)
     .slice(0, 8);
 
-  // Direct end-of-band labels for the topics-over-time stacked area.
-  const otLastYear = timeYears[timeYears.length - 1];
-  const otVals = topTopics.map((topicId) => (otLastYear ? (topicsOverTime[otLastYear]?.[topicId] || 0) : 0));
+  // Direct band labels (Fix 5): place each theme where ITS band is thickest
+  // (its own peak year), not at the final year where the bands collapse.
   const overTimeLabels = topTopics.map((topicId, idx) => {
-    const v = otVals[idx];
-    const mid = otVals.slice(0, idx).reduce((s, x) => s + x, 0) + v / 2;
+    let labelYear = timeYears[0];
+    let peakV = -1;
+    timeYears.forEach((y) => { const v = topicsOverTime[y]?.[topicId] || 0; if (v > peakV) { peakV = v; labelYear = y; } });
+    if (peakV <= 0) return null;
+    const below = topTopics.slice(0, idx).reduce((s, t) => s + (topicsOverTime[labelYear]?.[t] || 0), 0);
+    const mid = below + peakV / 2;
     const label = TOPIC_LABELS[topicId] || `Topic ${topicId}`;
     return {
-      x: otLastYear, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
-      text: v > 0 ? "  " + (label.length > 24 ? label.slice(0, 23) + "…" : label) : "",
+      x: labelYear, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
+      text: label,
       showarrow: false,
       font: { size: 9, color: TOPIC_COLORS[topicId % TOPIC_COLORS.length] },
+      bgcolor: "rgba(15,23,42,0.7)", borderpad: 2,
     };
-  }).filter((a) => a.text);
+  }).filter((a): a is NonNullable<typeof a> => a !== null);
 
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
@@ -235,6 +239,7 @@ export default function TopicsPage() {
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             hovermode: "closest",
+            hoverlabel: HOVERLABEL,
             dragmode: "pan",
           }}
           config={{ displayModeBar: true, scrollZoom: true, displaylogo: false,
@@ -350,6 +355,7 @@ export default function TopicsPage() {
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
             hovermode: "x unified",
+            hoverlabel: HOVERLABEL,
             showlegend: false,
             annotations: overTimeLabels,
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
