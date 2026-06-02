@@ -168,25 +168,6 @@ export default function TopicsPage() {
     .sort((a, b) => b.year - a.year)
     .slice(0, 8);
 
-  // Direct band labels (Fix 5): place each theme where ITS band is thickest
-  // (its own peak year), not at the final year where the bands collapse.
-  const overTimeLabels = topTopics.map((topicId, idx) => {
-    let labelYear = timeYears[0];
-    let peakV = -1;
-    timeYears.forEach((y) => { const v = topicsOverTime[y]?.[topicId] || 0; if (v > peakV) { peakV = v; labelYear = y; } });
-    if (peakV <= 0) return null;
-    const below = topTopics.slice(0, idx).reduce((s, t) => s + (topicsOverTime[labelYear]?.[t] || 0), 0);
-    const mid = below + peakV / 2;
-    const label = TOPIC_LABELS[topicId] || `Topic ${topicId}`;
-    return {
-      x: labelYear, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
-      text: label,
-      showarrow: false,
-      font: { size: 9, color: TOPIC_COLORS[topicId % TOPIC_COLORS.length] },
-      bgcolor: "rgba(15,23,42,0.7)", borderpad: 2,
-    };
-  }).filter((a): a is NonNullable<typeof a> => a !== null);
-
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
@@ -351,13 +332,13 @@ export default function TopicsPage() {
           data={timeTraces}
           layout={{
             height: 350,
-            margin: { l: 50, r: 150, t: 10, b: 40 },
+            margin: { l: 50, r: 240, t: 10, b: 40 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
             hovermode: "x unified",
             hoverlabel: HOVERLABEL,
-            showlegend: false,
-            annotations: overTimeLabels,
+            showlegend: true,
+            legend: { orientation: "v", x: 1.01, y: 1, xanchor: "left", font: { size: 10, color: "#ccc" }, bgcolor: "rgba(0,0,0,0)" },
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
           }}
