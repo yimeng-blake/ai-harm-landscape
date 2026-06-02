@@ -43,41 +43,55 @@ export default function TimelinePage() {
       (i) => i.year >= yearRange[0] && i.year <= yearRange[1]
     );
 
-    // Group by year + category
-    const grouped: Record<string, Record<number, number>> = {};
+    // Build sorted list of year-month keys ("YYYY-MM") present in the data
+    const monthSet = new Set<string>();
+    filteredIncidents.forEach((i) => {
+      monthSet.add(`${i.year}-${String(i.month).padStart(2, "0")}`);
+    });
+    const months = [...monthSet].sort();
+
+    // Group by month + category
+    const grouped: Record<string, Record<string, number>> = {};
     filteredIncidents.forEach((inc) => {
       let rawVal = inc[field] as string | null;
       if (!rawVal) rawVal = "Unclassified";
-      // GMF field can be comma-separated - take the first value
       const val = rawVal.split(",")[0].trim();
       const label = cleanLabel(val);
       if (!showUnclassified && label === "Unclassified") return;
       if (!grouped[label]) grouped[label] = {};
-      grouped[label][inc.year] = (grouped[label][inc.year] || 0) + 1;
+      const monthKey = `${inc.year}-${String(inc.month).padStart(2, "0")}`;
+      grouped[label][monthKey] = (grouped[label][monthKey] || 0) + 1;
     });
 
     // Sort categories by total count
     const catEntries = Object.entries(grouped)
-      .map(([cat, yearMap]) => ({ cat, total: Object.values(yearMap).reduce((s, v) => s + v, 0), yearMap }))
+      .map(([cat, monthMap]) => ({ cat, total: Object.values(monthMap).reduce((s, v) => s + v, 0), monthMap }))
       .sort((a, b) => b.total - a.total);
 
     // Limit to top 10 categories for readability
     const topCats = catEntries.slice(0, 10);
-    const years = [...new Set(filteredIncidents.map((i) => i.year))].sort();
 
-    const traces = topCats.map((entry, i) => ({
-      x: years,
-      y: years.map((y) => entry.yearMap[y] || 0),
-      type: "scatter" as const,
-      mode: "lines" as const,
-      name: entry.cat,
-      stackgroup: "one",
-      line: { width: 0.5 },
-      fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
-      marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
-    }));
+    // Convert month keys to Date objects for Plotly (first of each month)
+    const xDates = months.map((m) => `${m}-01`);
 
-    // Annual totals
+    const traces = topCats.map((entry, i) => {
+      const rawY = months.map((m) => entry.monthMap[m] || 0);
+      let cumulative = 0;
+      const cumY = rawY.map((v) => { cumulative += v; return cumulative; });
+      return {
+        x: xDates,
+        y: cumY,
+        type: "scatter" as const,
+        mode: "lines" as const,
+        name: entry.cat,
+        stackgroup: "one",
+        line: { width: 0.5 },
+        fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
+        marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+      };
+    });
+
+    // Annual totals (for the bar chart)
     const annualTotals: Record<number, number> = {};
     filteredIncidents.forEach((i) => {
       if (!showUnclassified && !i[field]) return;
@@ -86,11 +100,8 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    // y-axis ceiling (Fix 1): tallest stacked total across years, rounded up with headroom.
-    const yMax = years.reduce((mx, y) => {
-      const total = topCats.reduce((s, e) => s + (e.yearMap[y] || 0), 0);
-      return Math.max(mx, total);
-    }, 0);
+    // y-axis ceiling: sum of all categories' totals (the stacked cumulative max at the last month)
+    const yMax = topCats.reduce((s, e) => s + e.total, 0);
 
     return { traces, barYears, barCounts, yMax };
   }, [incidents, yearRange, showUnclassified, taxonomyTab]);
@@ -133,10 +144,10 @@ export default function TimelinePage() {
           layout={{
             height: 420,
             margin: { l: 50, r: 250, t: 20, b: 95 },
-            xaxis: { title: "Year", showgrid: false, color: "#888" },
+            xaxis: { title: "Month", showgrid: false, color: "#888", type: "date" as const },
             yaxis: {
-              title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
-              range: [0, Math.ceil((yMax || 0) / 50) * 50 + 50], dtick: 50,
+              title: "Cumulative Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
+              range: [0, Math.ceil((yMax || 0) / 100) * 100 + 100],
             },
             hovermode: "x unified",
             hoverlabel: HOVERLABEL,
@@ -146,8 +157,8 @@ export default function TimelinePage() {
             plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
             annotations: [
-              { x: 2018, xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "First AV fatality", font: { size: 10, color: "#fff" } },
-              { x: 2022.9, xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "ChatGPT launch", font: { size: 10, color: "#fff" } },
+              { x: "2018-03-01", xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "First AV fatality", font: { size: 10, color: "#fff" } },
+              { x: "2022-11-01", xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "ChatGPT launch", font: { size: 10, color: "#fff" } },
             ],
           }}
           config={{ displayModeBar: false }}
