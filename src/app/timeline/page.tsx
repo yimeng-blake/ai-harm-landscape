@@ -43,41 +43,50 @@ export default function TimelinePage() {
       (i) => i.year >= yearRange[0] && i.year <= yearRange[1]
     );
 
-    // Group by year + category
-    const grouped: Record<string, Record<number, number>> = {};
+    // Build sorted list of year-month keys ("YYYY-MM") present in the data
+    const monthSet = new Set<string>();
+    filteredIncidents.forEach((i) => {
+      monthSet.add(`${i.year}-${String(i.month).padStart(2, "0")}`);
+    });
+    const months = [...monthSet].sort();
+
+    // Group by month + category
+    const grouped: Record<string, Record<string, number>> = {};
     filteredIncidents.forEach((inc) => {
       let rawVal = inc[field] as string | null;
       if (!rawVal) rawVal = "Unclassified";
-      // GMF field can be comma-separated - take the first value
       const val = rawVal.split(",")[0].trim();
       const label = cleanLabel(val);
       if (!showUnclassified && label === "Unclassified") return;
       if (!grouped[label]) grouped[label] = {};
-      grouped[label][inc.year] = (grouped[label][inc.year] || 0) + 1;
+      const monthKey = `${inc.year}-${String(inc.month).padStart(2, "0")}`;
+      grouped[label][monthKey] = (grouped[label][monthKey] || 0) + 1;
     });
 
     // Sort categories by total count
     const catEntries = Object.entries(grouped)
-      .map(([cat, yearMap]) => ({ cat, total: Object.values(yearMap).reduce((s, v) => s + v, 0), yearMap }))
+      .map(([cat, monthMap]) => ({ cat, total: Object.values(monthMap).reduce((s, v) => s + v, 0), monthMap }))
       .sort((a, b) => b.total - a.total);
 
     // Limit to top 10 categories for readability
     const topCats = catEntries.slice(0, 10);
-    const years = [...new Set(filteredIncidents.map((i) => i.year))].sort();
+
+    // Convert month keys to Date objects for Plotly (first of each month)
+    const xDates = months.map((m) => `${m}-01`);
 
     const traces = topCats.map((entry, i) => ({
-      x: years,
-      y: years.map((y) => entry.yearMap[y] || 0),
+      x: xDates,
+      y: months.map((m) => entry.monthMap[m] || 0),
       type: "scatter" as const,
       mode: "lines" as const,
       name: entry.cat,
       stackgroup: "one",
-      line: { width: 0.5 },
+      line: { width: 0.5, shape: "spline" as const, smoothing: 1.3 },
       fillcolor: (CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length]) + "AA",
       marker: { color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
     }));
 
-    // Annual totals
+    // Annual totals (for the bar chart)
     const annualTotals: Record<number, number> = {};
     filteredIncidents.forEach((i) => {
       if (!showUnclassified && !i[field]) return;
@@ -86,17 +95,16 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    // Direct band labels (Fix 5): place each category's name where ITS band is
-    // thickest (its own peak year), not at the final year where bands collapse.
+    // Direct band labels: place at the month where each category's band is thickest
     const areaLabels = topCats.map((entry, i) => {
-      let labelYear = years[0];
+      let peakMonth = months[0];
       let peakV = -1;
-      years.forEach((y) => { const v = entry.yearMap[y] || 0; if (v > peakV) { peakV = v; labelYear = y; } });
+      months.forEach((m) => { const v = entry.monthMap[m] || 0; if (v > peakV) { peakV = v; peakMonth = m; } });
       if (peakV <= 0) return null;
-      const below = topCats.slice(0, i).reduce((s, e) => s + (e.yearMap[labelYear] || 0), 0);
+      const below = topCats.slice(0, i).reduce((s, e) => s + (e.monthMap[peakMonth] || 0), 0);
       const mid = below + peakV / 2;
       return {
-        x: labelYear, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
+        x: `${peakMonth}-01`, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
         text: entry.cat,
         showarrow: false,
         font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
@@ -104,9 +112,9 @@ export default function TimelinePage() {
       };
     }).filter((a): a is NonNullable<typeof a> => a !== null);
 
-    // y-axis ceiling (Fix 1): tallest stacked total across years, rounded up with headroom.
-    const yMax = years.reduce((mx, y) => {
-      const total = topCats.reduce((s, e) => s + (e.yearMap[y] || 0), 0);
+    // y-axis ceiling: tallest stacked total across months
+    const yMax = months.reduce((mx, m) => {
+      const total = topCats.reduce((s, e) => s + (e.monthMap[m] || 0), 0);
       return Math.max(mx, total);
     }, 0);
 
@@ -151,10 +159,10 @@ export default function TimelinePage() {
           layout={{
             height: 420,
             margin: { l: 50, r: 150, t: 20, b: 40 },
-            xaxis: { title: "Year", showgrid: false, color: "#888" },
+            xaxis: { title: "Month", showgrid: false, color: "#888", type: "date" as const },
             yaxis: {
               title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
-              range: [0, Math.ceil((yMax || 0) / 50) * 50 + 50], dtick: 50,
+              range: [0, Math.ceil((yMax || 0) / 10) * 10 + 10],
             },
             hovermode: "x unified",
             hoverlabel: HOVERLABEL,
@@ -164,8 +172,8 @@ export default function TimelinePage() {
             font: { color: "#ccc" },
             annotations: [
               ...areaLabels,
-              { x: 2018, y: 0, text: "First AV fatality", showarrow: true, arrowhead: 2, ax: 0, ay: -50, font: { size: 10, color: "#fff" } },
-              { x: 2022.9, y: 0, text: "ChatGPT launch", showarrow: true, arrowhead: 2, ax: 0, ay: -70, font: { size: 10, color: "#fff" } },
+              { x: "2018-03-01", y: 0, text: "First AV fatality", showarrow: true, arrowhead: 2, ax: 0, ay: -50, font: { size: 10, color: "#fff" } },
+              { x: "2022-11-01", y: 0, text: "ChatGPT launch", showarrow: true, arrowhead: 2, ax: 0, ay: -70, font: { size: 10, color: "#fff" } },
             ],
           }}
           config={{ displayModeBar: false }}
