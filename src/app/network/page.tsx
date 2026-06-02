@@ -2,7 +2,15 @@
 import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import { fetchJSON, NetworkData, Incident } from "../../lib/data";
-import { COMMUNITY_COLORS } from "../../lib/constants";
+import { COMMUNITY_COLORS, DEPLOYER_COLOR, HARMED_COLOR } from "../../lib/constants";
+
+type GraphLayout = "role" | "force" | "circular" | "community";
+const LAYOUT_OPTIONS: { value: GraphLayout; label: string }[] = [
+  { value: "role", label: "Role split (deployers ↔ harmed)" },
+  { value: "force", label: "Force-directed" },
+  { value: "circular", label: "Circular" },
+  { value: "community", label: "Grouped by cluster" },
+];
 
 export default function NetworkPage() {
   const [network, setNetwork] = useState<NetworkData | null>(null);
@@ -10,6 +18,13 @@ export default function NetworkPage() {
   const [minIncidents, setMinIncidents] = useState(10);
   const [selectedEntity, setSelectedEntity] = useState<string | null>(null);
   const [harmFilter, setHarmFilter] = useState<string>("All");
+  const [graphLayout, setGraphLayout] = useState<GraphLayout>("role");
+
+  // Pick the coordinate pair for the active layout.
+  const lx = (n: { x_role: number; x_force: number; x_circular: number; x_community: number }) =>
+    graphLayout === "force" ? n.x_force : graphLayout === "circular" ? n.x_circular : graphLayout === "community" ? n.x_community : n.x_role;
+  const ly = (n: { y_role: number; y_force: number; y_circular: number; y_community: number }) =>
+    graphLayout === "force" ? n.y_force : graphLayout === "circular" ? n.y_circular : graphLayout === "community" ? n.y_community : n.y_role;
 
   useEffect(() => {
     fetchJSON<NetworkData>("/data/network.json").then(setNetwork);
@@ -88,11 +103,11 @@ export default function NetworkPage() {
     const s = lookup[e.source], t = lookup[e.target];
     if (!s || !t) return;
     if (neighbors && (neighbors.has(e.source) && neighbors.has(e.target))) {
-      highlightEdgeX.push(s.x, t.x, null);
-      highlightEdgeY.push(s.y, t.y, null);
+      highlightEdgeX.push(lx(s), lx(t), null);
+      highlightEdgeY.push(ly(s), ly(t), null);
     } else {
-      edgeX.push(s.x, t.x, null);
-      edgeY.push(s.y, t.y, null);
+      edgeX.push(lx(s), lx(t), null);
+      edgeY.push(ly(s), ly(t), null);
     }
   });
 
@@ -132,7 +147,8 @@ export default function NetworkPage() {
 
   return (
     <div className="max-w-7xl">
-      <h1 className="text-3xl font-bold mb-2">🔗 Entity Network</h1>
+      <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">🔗 Entity Network</p>
+      <h1 className="text-3xl font-bold mb-2">The same organizations recur across AI incidents</h1>
       <p className="text-gray-400 mb-4">
         Which organizations keep appearing in AI incidents? This graph connects entities by
         <strong className="text-white"> co-occurrence</strong> — if two companies appear in the same incident, they share an edge.
@@ -154,6 +170,15 @@ export default function NetworkPage() {
             className="ml-2 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-white text-sm">
             {riskCategories.map((cat) => (
               <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-sm text-gray-400">
+          Layout:
+          <select value={graphLayout} onChange={(e) => setGraphLayout(e.target.value as GraphLayout)}
+            className="ml-2 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-white text-sm">
+            {LAYOUT_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
             ))}
           </select>
         </label>
@@ -195,8 +220,8 @@ export default function NetworkPage() {
               line: { width: 1.5, color: "rgba(255,255,255,0.5)" },
               hoverinfo: "none" },
             // Nodes
-            { x: filteredNodes.map((n) => n.x),
-              y: filteredNodes.map((n) => n.y),
+            { x: filteredNodes.map((n) => lx(n)),
+              y: filteredNodes.map((n) => ly(n)),
               text: filteredNodes.map((n) => n.count >= labelThreshold ? n.id.replace(/-/g, " ") : ""),
               customdata: filteredNodes.map((n) => [n.id, n.count, n.roles.join(", "), n.community_label]),
               type: "scatter", mode: "markers+text",
@@ -215,19 +240,24 @@ export default function NetworkPage() {
             height: 550,
             margin: { l: 0, r: 0, t: 0, b: 0 },
             showlegend: false, hovermode: "closest",
-            xaxis: { showgrid: false, zeroline: false, showticklabels: false, fixedrange: true },
-            yaxis: { showgrid: false, zeroline: false, showticklabels: false, fixedrange: true },
+            xaxis: { showgrid: false, zeroline: false, showticklabels: false },
+            yaxis: { showgrid: false, zeroline: false, showticklabels: false },
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
-            dragmode: false,
-            annotations: [
+            dragmode: "pan",
+            annotations: graphLayout === "role" ? [
               { x: -1.5, y: 1.3, text: "← Deployers / Developers", showarrow: false, font: { size: 10, color: "#666" } },
               { x: 1.5, y: 1.3, text: "Harmed Parties →", showarrow: false, font: { size: 10, color: "#666" } },
-            ],
+            ] : [],
           }}
-          config={{ displayModeBar: false, scrollZoom: false }}
+          config={{ displayModeBar: true, scrollZoom: true, displaylogo: false,
+            modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d"] }}
+          onClick={(ev) => {
+            const id = ev?.points?.[0]?.customdata?.[0] as string | undefined;
+            if (id) setSelectedEntity(selectedEntity === id ? null : id);
+          }}
           style={{ width: "100%" }}
         />
-        <p className="text-xs text-gray-600 mt-2">Click an entity in the list below to highlight its connections.</p>
+        <p className="text-xs text-gray-600 mt-2">Drag to pan, scroll to zoom, and click any node (or the list below) to highlight its connections.</p>
       </div>
 
       {/* Bottom Panel: Stats + Detail */}
@@ -240,7 +270,7 @@ export default function NetworkPage() {
               x: topDeployers.map((n) => n.count),
               y: topDeployers.map((n) => n.id.replace(/-/g, " ")),
               type: "bar", orientation: "h",
-              marker: { color: "#FF6B6B" },
+              marker: { color: DEPLOYER_COLOR },
             }]}
             layout={{
               height: 240, margin: { l: 90, r: 10, t: 5, b: 5 },
@@ -261,7 +291,7 @@ export default function NetworkPage() {
               x: topHarmed.map((n) => n.count),
               y: topHarmed.map((n) => n.id.replace(/-/g, " ")),
               type: "bar", orientation: "h",
-              marker: { color: "#4ECDC4" },
+              marker: { color: HARMED_COLOR },
             }]}
             layout={{
               height: 240, margin: { l: 90, r: 10, t: 5, b: 5 },

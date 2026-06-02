@@ -1,3 +1,14 @@
+// ---------------------------------------------------------------------------
+// COLOR SYSTEM
+// Each semantic dimension gets its OWN stable palette so a given color always
+// means one thing. Palettes are chosen to be distinguishable for the most
+// common color-vision deficiencies (Okabe-Ito based; red-vs-grey, not red-vs-green).
+// ---------------------------------------------------------------------------
+
+// Okabe-Ito colorblind-safe base (used for risk categories — the dimension that
+// recurs across the most pages, so it needs the most stable, accessible mapping).
+const NEUTRAL = "#999999";
+
 export const TOPIC_LABELS: Record<number, string> = {
   0: "Autonomous Vehicles & Robotics",
   1: "Facial Recognition & Surveillance",
@@ -13,22 +24,43 @@ export const TOPIC_LABELS: Record<number, string> = {
   11: "Political Deepfakes & Disinformation",
 };
 
+// TOPICS: 12-class qualitative set (Paul Tol family) — its own palette, distinct
+// from the category and community palettes so "Topic 0" never reads as a category.
 export const TOPIC_COLORS: string[] = [
-  "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7",
-  "#DDA0DD", "#F7DC6F", "#FF8C94", "#85C1E9", "#82E0AA",
-  "#F8C471", "#BB8FCE",
+  "#332288", "#117733", "#44AA99", "#88CCEE", "#DDCC77", "#CC6677",
+  "#AA4499", "#882255", "#661100", "#6699CC", "#999933", "#EE8866",
 ];
 
+// RISK CATEGORIES: Okabe-Ito, stable across timeline / network filter / topics filter.
 export const CATEGORY_COLORS: Record<string, string> = {
-  "Discrimination and Toxicity": "#FF6B6B",
-  "AI system safety, failures, and limitations": "#4ECDC4",
-  "Privacy and Security": "#45B7D1",
-  "Malicious Actors and Misuse": "#FFEAA7",
-  "Socioeconomic and Environmental Harms": "#DDA0DD",
-  "Misinformation and Disinformation": "#F7DC6F",
-  "Human Autonomy and Oversight": "#96CEB4",
-  "Unclassified": "#555555",
+  "Discrimination and Toxicity": "#D55E00",
+  "AI system safety, failures, and limitations": "#0072B2",
+  "Privacy and Security": "#009E73",
+  "Malicious Actors and Misuse": "#CC79A7",
+  "Socioeconomic and Environmental Harms": "#E69F00",
+  "Misinformation and Disinformation": "#56B4E9",
+  "Human Autonomy and Oversight": "#F0E442",
+  "Unclassified": NEUTRAL,
 };
+
+// Same concepts, alternate label spellings used by the MIT taxonomy view —
+// mapped to the SAME hue per concept for cross-page consistency.
+export const MIT_DOMAIN_COLORS: Record<string, string> = {
+  "Malicious Actors & Misuse": "#CC79A7",
+  "AI system safety, failures, and limitations": "#0072B2",
+  "Discrimination and Toxicity": "#D55E00",
+  "Misinformation": "#56B4E9",
+  "Privacy & Security": "#009E73",
+  "Human-Computer Interaction": "#F0E442",
+  "Socioeconomic & Environmental Harms": "#E69F00",
+};
+
+// Fallback for taxonomy donuts — same family as risk categories.
+export const DONUT_PALETTE = [
+  "#0072B2", "#E69F00", "#009E73", "#CC79A7", "#56B4E9",
+  "#D55E00", "#F0E442", "#882255", "#44AA99", "#AA4499",
+  "#6699CC", "#999933", NEUTRAL,
+];
 
 export const NAV_ITEMS = [
   { href: "/", label: "Home", icon: "🏠" },
@@ -38,38 +70,29 @@ export const NAV_ITEMS = [
   { href: "/heatmap", label: "Harm Matrix", icon: "🗂️" },
 ];
 
-// MIT Risk Domain colors (clean names without numbering)
-export const MIT_DOMAIN_COLORS: Record<string, string> = {
-  "Malicious Actors & Misuse": "#FF6B6B",
-  "AI system safety, failures, and limitations": "#4ECDC4",
-  "Discrimination and Toxicity": "#45B7D1",
-  "Misinformation": "#FFEAA7",
-  "Privacy & Security": "#DDA0DD",
-  "Human-Computer Interaction": "#96CEB4",
-  "Socioeconomic & Environmental Harms": "#F7DC6F",
-};
-
-export const DONUT_PALETTE = [
-  "#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7",
-  "#DDA0DD", "#F7DC6F", "#FF8C94", "#85C1E9", "#82E0AA",
-  "#F8C471", "#BB8FCE", "#AED6F1", "#F5B7B1", "#A2D9CE",
-];
-
+// COMMUNITIES: a distinct (seaborn-muted) family so a community color is never
+// mistaken for a risk-category color elsewhere in the app.
 export const COMMUNITY_COLORS: Record<number, string> = {
-  0: "#FF6B6B",  // Big Tech
-  1: "#4ECDC4",  // Surveillance & Policing
-  2: "#45B7D1",  // Students & Minors
-  3: "#FFEAA7",  // LLM Users
-  4: "#DDA0DD",  // Generative AI
-  5: "#96CEB4",  // Education
-  6: "#F7DC6F",  // Workplace
-  7: "#FF8C94",  // Cybercrime
-  [-1 as unknown as number]: "#555555", // Other
+  0: "#4C72B0",  // Big Tech
+  1: "#DD8452",  // Surveillance & Policing
+  2: "#55A868",  // Students & Minors
+  3: "#C44E52",  // LLM Users
+  4: "#8172B3",  // Generative AI
+  5: "#937860",  // Education
+  6: "#DA8BC3",  // Workplace
+  7: "#CCB974",  // Cybercrime
+  [-1 as unknown as number]: NEUTRAL, // Other
 };
 
+// ROLES: each role is now its OWN color (deployer and developer were identical
+// before, which made them indistinguishable). Used for the deployer/harmed bars.
 export const ROLE_COLORS: Record<string, string> = {
-  deployer: "#FF6B6B",
-  developer: "#FF6B6B",
-  harmed: "#4ECDC4",
-  mixed: "#FFEAA7",
+  deployer: "#0072B2",  // blue
+  developer: "#56B4E9",  // sky blue
+  harmed: "#E69F00",     // orange
+  mixed: "#CC79A7",      // purple
 };
+
+// Semantic shortcuts for the recurring "who acted" vs "who was harmed" bar charts.
+export const DEPLOYER_COLOR = ROLE_COLORS.deployer;
+export const HARMED_COLOR = ROLE_COLORS.harmed;

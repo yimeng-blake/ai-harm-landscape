@@ -47,6 +47,10 @@ export interface NetworkNode {
   community_label: string;
   x: number;
   y: number;
+  x_role: number; y_role: number;
+  x_force: number; y_force: number;
+  x_circular: number; y_circular: number;
+  x_community: number; y_community: number;
 }
 
 export interface NetworkEdge {

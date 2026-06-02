@@ -44,7 +44,8 @@ export default function HeatmapPage() {
 
   return (
     <div className="max-w-6xl">
-      <h1 className="text-3xl font-bold mb-2">🗂️ Harm Matrix</h1>
+      <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">🗂️ Harm Matrix</p>
+      <h1 className="text-3xl font-bold mb-2">AI harm concentrates in a few technology–risk pairs</h1>
       <p className="text-gray-400 mb-6">
         Which risk categories intersect with which AI technologies? Darker cells = more incidents.
       </p>
@@ -84,7 +85,7 @@ export default function HeatmapPage() {
             data={[{
               x: rows.map((r) => rowTotals[r] || 0),
               y: rows.map((r) => truncate(r)),
-              type: "bar", orientation: "h", marker: { color: "#FF6B6B" },
+              type: "bar", orientation: "h", marker: { color: "#0072B2" },
             }]}
             layout={{
               height: Math.max(200, rows.length * 28),
@@ -102,7 +103,7 @@ export default function HeatmapPage() {
             data={[{
               x: columns.map((c) => colTotals[c] || 0),
               y: columns.map((c) => truncate(c)),
-              type: "bar", orientation: "h", marker: { color: "#4ECDC4" },
+              type: "bar", orientation: "h", marker: { color: "#E69F00" },
             }]}
             layout={{
               height: Math.max(200, columns.length * 28),
