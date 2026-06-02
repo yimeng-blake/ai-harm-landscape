@@ -66,6 +66,24 @@ export default function TopicsPage() {
     [filteredIncidents, selectedTopic, topics]
   );
 
+  // Direct cluster labels at each topic's centroid (replaces the 12-item legend).
+  const centroidLabels = useMemo(
+    () => topics.map((t) => {
+      const pts = filteredIncidents.filter((i) => i.topic === t);
+      if (!pts.length) return null;
+      const mx = pts.reduce((s, p) => s + p.umap_x, 0) / pts.length;
+      const my = pts.reduce((s, p) => s + p.umap_y, 0) / pts.length;
+      const sel = selectedTopic === null || selectedTopic === t;
+      return {
+        x: mx, y: my, showarrow: false,
+        text: TOPIC_LABELS[t] || `Topic ${t}`,
+        font: { size: 10, color: sel ? "#ffffff" : "rgba(255,255,255,0.2)" },
+        bgcolor: sel ? "rgba(17,24,39,0.72)" : "rgba(0,0,0,0)",
+      };
+    }).filter(Boolean),
+    [filteredIncidents, topics, selectedTopic]
+  );
+
   // Topic counts from filtered data
   const topicCounts = useMemo(() => {
     const counts: Record<number, number> = {};
@@ -150,11 +168,27 @@ export default function TopicsPage() {
     .sort((a, b) => b.year - a.year)
     .slice(0, 8);
 
+  // Direct end-of-band labels for the topics-over-time stacked area.
+  const otLastYear = timeYears[timeYears.length - 1];
+  const otVals = topTopics.map((topicId) => (otLastYear ? (topicsOverTime[otLastYear]?.[topicId] || 0) : 0));
+  const overTimeLabels = topTopics.map((topicId, idx) => {
+    const v = otVals[idx];
+    const mid = otVals.slice(0, idx).reduce((s, x) => s + x, 0) + v / 2;
+    const label = TOPIC_LABELS[topicId] || `Topic ${topicId}`;
+    return {
+      x: otLastYear, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
+      text: v > 0 ? "  " + (label.length > 24 ? label.slice(0, 23) + "…" : label) : "",
+      showarrow: false,
+      font: { size: 9, color: TOPIC_COLORS[topicId % TOPIC_COLORS.length] },
+    };
+  }).filter((a) => a.text);
+
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
     <div className="max-w-7xl">
-      <h1 className="text-3xl font-bold mb-2">🧠 Topic Explorer</h1>
+      <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">🧠 Topic Explorer</p>
+      <h1 className="text-3xl font-bold mb-2">Twelve harm themes emerge from the incident text</h1>
       <p className="text-gray-400 mb-4">
         BERTopic discovers <strong className="text-white">12 latent themes</strong> in AI incident
         descriptions using sentence embeddings and hierarchical clustering.
@@ -194,18 +228,21 @@ export default function TopicsPage() {
           layout={{
             height: 500,
             margin: { l: 0, r: 0, t: 10, b: 0 },
-            xaxis: { showgrid: false, showticklabels: false, zeroline: false, fixedrange: true },
-            yaxis: { showgrid: false, showticklabels: false, zeroline: false, fixedrange: true },
-            legend: {
-              orientation: "v", y: 0.98, x: 1.01, font: { size: 9, color: "#bbb" },
-              bgcolor: "rgba(17,24,39,0.9)", bordercolor: "rgba(255,255,255,0.05)", borderwidth: 1,
-            },
+            xaxis: { showgrid: false, showticklabels: false, zeroline: false },
+            yaxis: { showgrid: false, showticklabels: false, zeroline: false },
+            showlegend: false,
+            annotations: centroidLabels,
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             hovermode: "closest",
-            dragmode: false,
+            dragmode: "pan",
           }}
-          config={{ displayModeBar: false, scrollZoom: false }}
+          config={{ displayModeBar: true, scrollZoom: true, displaylogo: false,
+            modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d"] }}
+          onClick={(ev) => {
+            const t = topics[ev?.points?.[0]?.curveNumber ?? -1];
+            if (t !== undefined) setSelectedTopic(selectedTopic === t ? null : t);
+          }}
           style={{ width: "100%" }}
         />
       </div>
@@ -309,11 +346,12 @@ export default function TopicsPage() {
           data={timeTraces}
           layout={{
             height: 350,
-            margin: { l: 50, r: 20, t: 10, b: 40 },
+            margin: { l: 50, r: 150, t: 10, b: 40 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
             hovermode: "x unified",
-            legend: { orientation: "h", y: -0.3, x: 0.5, xanchor: "center", font: { size: 9, color: "#aaa" } },
+            showlegend: false,
+            annotations: overTimeLabels,
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
           }}

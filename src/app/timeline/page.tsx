@@ -35,8 +35,8 @@ export default function TimelinePage() {
   }, []);
 
   // Compute timeline data from incidents based on selected taxonomy
-  const { traces, barYears, barCounts, categories } = useMemo(() => {
-    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], categories: [] };
+  const { traces, barYears, barCounts, areaLabels } = useMemo(() => {
+    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], categories: [], areaLabels: [] };
 
     const field = TAXONOMY_FIELD[taxonomyTab];
     const filteredIncidents = incidents.filter(
@@ -86,14 +86,30 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    return { traces, barYears, barCounts, categories: topCats.map((c) => c.cat) };
+    // Direct end-of-band labels (replaces the color-match legend): place each
+    // category's name at the midpoint of its band in the final year.
+    const lastYear = years[years.length - 1];
+    const lastVals = topCats.map((entry) => entry.yearMap[lastYear] || 0);
+    const areaLabels = topCats.map((entry, i) => {
+      const v = lastVals[i];
+      const mid = lastVals.slice(0, i).reduce((s, x) => s + x, 0) + v / 2;
+      return {
+        x: lastYear, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
+        text: v > 0 ? "  " + (entry.cat.length > 26 ? entry.cat.slice(0, 25) + "…" : entry.cat) : "",
+        showarrow: false,
+        font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+      };
+    }).filter((a) => a.text);
+
+    return { traces, barYears, barCounts, categories: topCats.map((c) => c.cat), areaLabels };
   }, [incidents, yearRange, showUnclassified, taxonomyTab]);
 
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
     <div className="max-w-6xl">
-      <h1 className="text-3xl font-bold mb-2">📈 AI Incidents Timeline</h1>
+      <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">📈 AI Incidents Timeline</p>
+      <h1 className="text-3xl font-bold mb-2">AI incident reports have exploded since 2022</h1>
       <p className="text-gray-400 mb-6">
         Incident volume over time grouped by <strong className="text-white">{TAXONOMY_LABEL[taxonomyTab]}</strong>.
         Switch taxonomy below to change the grouping.
@@ -125,15 +141,16 @@ export default function TimelinePage() {
           data={traces}
           layout={{
             height: 420,
-            margin: { l: 50, r: 20, t: 20, b: 40 },
+            margin: { l: 50, r: 150, t: 20, b: 40 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
             hovermode: "x unified",
-            legend: { orientation: "h", y: -0.25, x: 0.5, xanchor: "center", font: { size: 10, color: "#aaa" } },
+            showlegend: false,
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
             annotations: [
+              ...areaLabels,
               { x: 2018, y: 0, text: "First AV fatality", showarrow: true, arrowhead: 2, ax: 0, ay: -50, font: { size: 10, color: "#fff" } },
               { x: 2022.9, y: 0, text: "ChatGPT launch", showarrow: true, arrowhead: 2, ax: 0, ay: -70, font: { size: 10, color: "#fff" } },
             ],
@@ -174,7 +191,7 @@ export default function TimelinePage() {
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
         <h3 className="text-sm font-medium text-gray-300 mb-2">Annual Totals</h3>
         <PlotlyChart
-          data={[{ x: barYears, y: barCounts, type: "bar", marker: { color: "#FF6B6B" } }]}
+          data={[{ x: barYears, y: barCounts, type: "bar", marker: { color: "#888888" } }]}
           layout={{
             height: 220,
             margin: { l: 40, r: 10, t: 10, b: 30 },
