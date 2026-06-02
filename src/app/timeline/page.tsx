@@ -100,6 +100,22 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
+    // End-of-line labels: place each category's name at the right edge of the chart,
+    // at the midpoint of its band in the final stacked cumulative value.
+    const lastDate = xDates[xDates.length - 1];
+    const finalTotals = topCats.map((e) => e.total);
+    const areaLabels = topCats.map((entry, i) => {
+      if (entry.total <= 0) return null;
+      const below = finalTotals.slice(0, i).reduce((s, v) => s + v, 0);
+      const mid = below + entry.total / 2;
+      return {
+        x: lastDate, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
+        text: "  " + (entry.cat.length > 22 ? entry.cat.slice(0, 21) + "\u2026" : entry.cat),
+        showarrow: false,
+        font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+      };
+    }).filter((a): a is NonNullable<typeof a> => a !== null);
+
     // y-axis ceiling: sum of all categories' totals (the stacked cumulative max at the last month)
     const yMax = topCats.reduce((s, e) => s + e.total, 0);
 
@@ -144,6 +160,7 @@ export default function TimelinePage() {
           layout={{
             height: 420,
             margin: { l: 50, r: 250, t: 20, b: 95 },
+            margin: { l: 50, r: 150, t: 20, b: 40 },
             xaxis: { title: "Month", showgrid: false, color: "#888", type: "date" as const },
             yaxis: {
               title: "Cumulative Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
@@ -159,6 +176,9 @@ export default function TimelinePage() {
             annotations: [
               { x: "2018-03-01", xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "First AV fatality", font: { size: 10, color: "#fff" } },
               { x: "2022-11-01", xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "ChatGPT launch", font: { size: 10, color: "#fff" } },
+              ...areaLabels,
+              { x: "2018-03-01", y: 0, text: "First AV fatality", showarrow: true, arrowhead: 2, ax: 0, ay: -50, font: { size: 10, color: "#fff" } },
+              { x: "2022-11-01", y: 0, text: "ChatGPT launch", showarrow: true, arrowhead: 2, ax: 0, ay: -70, font: { size: 10, color: "#fff" } },
             ],
           }}
           config={{ displayModeBar: false }}
