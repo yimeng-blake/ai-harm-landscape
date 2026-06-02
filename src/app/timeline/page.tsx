@@ -35,8 +35,8 @@ export default function TimelinePage() {
   }, []);
 
   // Compute timeline data from incidents based on selected taxonomy
-  const { traces, barYears, barCounts, areaLabels, yMax } = useMemo(() => {
-    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], areaLabels: [], yMax: 0 };
+  const { traces, barYears, barCounts, yMax } = useMemo(() => {
+    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], yMax: 0 };
 
     const field = TAXONOMY_FIELD[taxonomyTab];
     const filteredIncidents = incidents.filter(
@@ -86,31 +86,13 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    // Direct band labels (Fix 5): place each category's name where ITS band is
-    // thickest (its own peak year), not at the final year where bands collapse.
-    const areaLabels = topCats.map((entry, i) => {
-      let labelYear = years[0];
-      let peakV = -1;
-      years.forEach((y) => { const v = entry.yearMap[y] || 0; if (v > peakV) { peakV = v; labelYear = y; } });
-      if (peakV <= 0) return null;
-      const below = topCats.slice(0, i).reduce((s, e) => s + (e.yearMap[labelYear] || 0), 0);
-      const mid = below + peakV / 2;
-      return {
-        x: labelYear, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
-        text: entry.cat,
-        showarrow: false,
-        font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
-        bgcolor: "rgba(15,23,42,0.7)", borderpad: 2,
-      };
-    }).filter((a): a is NonNullable<typeof a> => a !== null);
-
     // y-axis ceiling (Fix 1): tallest stacked total across years, rounded up with headroom.
     const yMax = years.reduce((mx, y) => {
       const total = topCats.reduce((s, e) => s + (e.yearMap[y] || 0), 0);
       return Math.max(mx, total);
     }, 0);
 
-    return { traces, barYears, barCounts, areaLabels, yMax };
+    return { traces, barYears, barCounts, yMax };
   }, [incidents, yearRange, showUnclassified, taxonomyTab]);
 
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
@@ -150,7 +132,7 @@ export default function TimelinePage() {
           data={traces}
           layout={{
             height: 420,
-            margin: { l: 50, r: 150, t: 20, b: 40 },
+            margin: { l: 50, r: 250, t: 20, b: 95 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: {
               title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
@@ -158,14 +140,14 @@ export default function TimelinePage() {
             },
             hovermode: "x unified",
             hoverlabel: HOVERLABEL,
-            showlegend: false,
+            showlegend: true,
+            legend: { orientation: "v", x: 1.01, y: 1, xanchor: "left", font: { size: 10, color: "#ccc" }, bgcolor: "rgba(0,0,0,0)" },
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
             annotations: [
-              ...areaLabels,
-              { x: 2018, y: 0, text: "First AV fatality", showarrow: true, arrowhead: 2, ax: 0, ay: -50, font: { size: 10, color: "#fff" } },
-              { x: 2022.9, y: 0, text: "ChatGPT launch", showarrow: true, arrowhead: 2, ax: 0, ay: -70, font: { size: 10, color: "#fff" } },
+              { x: 2018, xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "First AV fatality", font: { size: 10, color: "#fff" } },
+              { x: 2022.9, xref: "x", y: -0.12, yref: "paper", ax: 0, ay: 26, showarrow: true, arrowhead: 2, arrowcolor: "#94a3b8", yanchor: "top", text: "ChatGPT launch", font: { size: 10, color: "#fff" } },
             ],
           }}
           config={{ displayModeBar: false }}
