@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, Incident, TopicInfo } from "../../lib/data";
-import { TOPIC_LABELS, TOPIC_COLORS } from "../../lib/constants";
+import { TOPIC_LABELS, TOPIC_COLORS, HOVERLABEL } from "../../lib/constants";
 
 export default function TopicsPage() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
@@ -168,21 +168,6 @@ export default function TopicsPage() {
     .sort((a, b) => b.year - a.year)
     .slice(0, 8);
 
-  // Direct end-of-band labels for the topics-over-time stacked area.
-  const otLastYear = timeYears[timeYears.length - 1];
-  const otVals = topTopics.map((topicId) => (otLastYear ? (topicsOverTime[otLastYear]?.[topicId] || 0) : 0));
-  const overTimeLabels = topTopics.map((topicId, idx) => {
-    const v = otVals[idx];
-    const mid = otVals.slice(0, idx).reduce((s, x) => s + x, 0) + v / 2;
-    const label = TOPIC_LABELS[topicId] || `Topic ${topicId}`;
-    return {
-      x: otLastYear, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
-      text: v > 0 ? "  " + (label.length > 24 ? label.slice(0, 23) + "…" : label) : "",
-      showarrow: false,
-      font: { size: 9, color: TOPIC_COLORS[topicId % TOPIC_COLORS.length] },
-    };
-  }).filter((a) => a.text);
-
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
 
   return (
@@ -235,6 +220,7 @@ export default function TopicsPage() {
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             hovermode: "closest",
+            hoverlabel: HOVERLABEL,
             dragmode: "pan",
           }}
           config={{ displayModeBar: true, scrollZoom: true, displaylogo: false,
@@ -346,12 +332,13 @@ export default function TopicsPage() {
           data={timeTraces}
           layout={{
             height: 350,
-            margin: { l: 50, r: 150, t: 10, b: 40 },
+            margin: { l: 50, r: 240, t: 10, b: 40 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
             yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
             hovermode: "x unified",
-            showlegend: false,
-            annotations: overTimeLabels,
+            hoverlabel: HOVERLABEL,
+            showlegend: true,
+            legend: { orientation: "v", x: 1.01, y: 1, xanchor: "left", font: { size: 10, color: "#ccc" }, bgcolor: "rgba(0,0,0,0)" },
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
           }}

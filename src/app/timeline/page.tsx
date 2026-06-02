@@ -4,7 +4,7 @@ import PlotlyChart from "../../components/PlotlyChart";
 import TaxonomyBreakdown, { TaxonomyTab } from "../../components/TaxonomyBreakdown";
 import WordCloud, { extractWords } from "../../components/WordCloud";
 import { fetchJSON, TimelineRow, Incident } from "../../lib/data";
-import { CATEGORY_COLORS, DONUT_PALETTE } from "../../lib/constants";
+import { CATEGORY_COLORS, DONUT_PALETTE, HOVERLABEL } from "../../lib/constants";
 
 // Map taxonomy tab to the field used for grouping
 const TAXONOMY_FIELD: Record<TaxonomyTab, keyof Incident> = {
@@ -35,8 +35,8 @@ export default function TimelinePage() {
   }, []);
 
   // Compute timeline data from incidents based on selected taxonomy
-  const { traces, barYears, barCounts, areaLabels } = useMemo(() => {
-    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], categories: [], areaLabels: [] };
+  const { traces, barYears, barCounts, areaLabels, yMax } = useMemo(() => {
+    if (!incidents.length) return { traces: [], barYears: [], barCounts: [], areaLabels: [], yMax: 0 };
 
     const field = TAXONOMY_FIELD[taxonomyTab];
     const filteredIncidents = incidents.filter(
@@ -86,22 +86,31 @@ export default function TimelinePage() {
     const barYears = Object.keys(annualTotals).map(Number).sort();
     const barCounts = barYears.map((y) => annualTotals[y]);
 
-    // Direct end-of-band labels (replaces the color-match legend): place each
-    // category's name at the midpoint of its band in the final year.
-    const lastYear = years[years.length - 1];
-    const lastVals = topCats.map((entry) => entry.yearMap[lastYear] || 0);
+    // Direct band labels (Fix 5): place each category's name where ITS band is
+    // thickest (its own peak year), not at the final year where bands collapse.
     const areaLabels = topCats.map((entry, i) => {
-      const v = lastVals[i];
-      const mid = lastVals.slice(0, i).reduce((s, x) => s + x, 0) + v / 2;
+      let labelYear = years[0];
+      let peakV = -1;
+      years.forEach((y) => { const v = entry.yearMap[y] || 0; if (v > peakV) { peakV = v; labelYear = y; } });
+      if (peakV <= 0) return null;
+      const below = topCats.slice(0, i).reduce((s, e) => s + (e.yearMap[labelYear] || 0), 0);
+      const mid = below + peakV / 2;
       return {
-        x: lastYear, y: mid, xanchor: "left" as const, yanchor: "middle" as const,
-        text: v > 0 ? "  " + (entry.cat.length > 26 ? entry.cat.slice(0, 25) + "…" : entry.cat) : "",
+        x: labelYear, y: mid, xanchor: "center" as const, yanchor: "middle" as const,
+        text: entry.cat,
         showarrow: false,
         font: { size: 9, color: CATEGORY_COLORS[entry.cat] || DONUT_PALETTE[i % DONUT_PALETTE.length] },
+        bgcolor: "rgba(15,23,42,0.7)", borderpad: 2,
       };
-    }).filter((a) => a.text);
+    }).filter((a): a is NonNullable<typeof a> => a !== null);
 
-    return { traces, barYears, barCounts, categories: topCats.map((c) => c.cat), areaLabels };
+    // y-axis ceiling (Fix 1): tallest stacked total across years, rounded up with headroom.
+    const yMax = years.reduce((mx, y) => {
+      const total = topCats.reduce((s, e) => s + (e.yearMap[y] || 0), 0);
+      return Math.max(mx, total);
+    }, 0);
+
+    return { traces, barYears, barCounts, areaLabels, yMax };
   }, [incidents, yearRange, showUnclassified, taxonomyTab]);
 
   if (!incidents.length) return <div className="text-gray-400">Loading...</div>;
@@ -143,8 +152,12 @@ export default function TimelinePage() {
             height: 420,
             margin: { l: 50, r: 150, t: 20, b: 40 },
             xaxis: { title: "Year", showgrid: false, color: "#888" },
-            yaxis: { title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888" },
+            yaxis: {
+              title: "Incidents", showgrid: true, gridcolor: "#1f2937", color: "#888",
+              range: [0, Math.ceil((yMax || 0) / 50) * 50 + 50], dtick: 50,
+            },
             hovermode: "x unified",
+            hoverlabel: HOVERLABEL,
             showlegend: false,
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
@@ -191,12 +204,14 @@ export default function TimelinePage() {
       <div className="bg-gray-900 rounded-xl border border-gray-800 p-4">
         <h3 className="text-sm font-medium text-gray-300 mb-2">Annual Totals</h3>
         <PlotlyChart
-          data={[{ x: barYears, y: barCounts, type: "bar", marker: { color: "#888888" } }]}
+          data={[{ x: barYears, y: barCounts, type: "bar", marker: { color: "#888888" },
+            hovertemplate: "%{x}: %{y} incidents<extra></extra>" }]}
           layout={{
             height: 220,
             margin: { l: 40, r: 10, t: 10, b: 30 },
             xaxis: { showgrid: false, color: "#888" },
             yaxis: { showgrid: false, color: "#888" },
+            hoverlabel: HOVERLABEL,
             paper_bgcolor: "rgba(0,0,0,0)",
             plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },

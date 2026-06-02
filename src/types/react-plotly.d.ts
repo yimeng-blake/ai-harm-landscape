@@ -21,6 +21,7 @@ declare module "react-plotly.js" {
     onUpdate?: (figure: any, graphDiv: any) => void;
     onError?: (err: any) => void;
     onClick?: (event: PlotlyClickEvent) => void;
+    useResizeHandler?: boolean;
   }
 
   export default class Plot extends Component<PlotParams> {}

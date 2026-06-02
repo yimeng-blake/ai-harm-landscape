@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import { fetchJSON, HeatmapRow } from "../../lib/data";
+import { HOVERLABEL } from "../../lib/constants";
 
 export default function HeatmapPage() {
   const [data, setData] = useState<HeatmapRow[]>([]);
@@ -69,6 +70,7 @@ export default function HeatmapPage() {
             margin: { l: 180, r: 20, t: 10, b: 100 },
             xaxis: { tickangle: -40, tickfont: { size: 10, color: "#aaa" } },
             yaxis: { tickfont: { size: 10, color: "#aaa" }, autorange: "reversed" },
+            hoverlabel: HOVERLABEL,
             paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)",
             font: { color: "#ccc" },
           }}
@@ -86,11 +88,13 @@ export default function HeatmapPage() {
               x: rows.map((r) => rowTotals[r] || 0),
               y: rows.map((r) => truncate(r)),
               type: "bar", orientation: "h", marker: { color: "#0072B2" },
+              hovertemplate: "%{y}: %{x} incidents<extra></extra>",
             }]}
             layout={{
               height: Math.max(200, rows.length * 28),
               margin: { l: 160, r: 10, t: 10, b: 20 },
               xaxis: { color: "#888" }, yaxis: { autorange: "reversed", color: "#aaa" },
+              hoverlabel: HOVERLABEL,
               paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { color: "#ccc" },
             }}
             config={{ displayModeBar: false }}
@@ -104,11 +108,13 @@ export default function HeatmapPage() {
               x: columns.map((c) => colTotals[c] || 0),
               y: columns.map((c) => truncate(c)),
               type: "bar", orientation: "h", marker: { color: "#E69F00" },
+              hovertemplate: "%{y}: %{x} incidents<extra></extra>",
             }]}
             layout={{
               height: Math.max(200, columns.length * 28),
               margin: { l: 160, r: 10, t: 10, b: 20 },
               xaxis: { color: "#888" }, yaxis: { autorange: "reversed", color: "#aaa" },
+              hoverlabel: HOVERLABEL,
               paper_bgcolor: "rgba(0,0,0,0)", plot_bgcolor: "rgba(0,0,0,0)", font: { color: "#ccc" },
             }}
             config={{ displayModeBar: false }}

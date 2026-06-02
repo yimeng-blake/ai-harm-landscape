@@ -14,5 +14,14 @@ interface PlotlyChartProps {
 }
 
 export default function PlotlyChart({ data, layout, config, style, onClick }: PlotlyChartProps) {
-  return <Plot data={data} layout={layout} config={config} style={style} onClick={onClick} />;
+  return (
+    <Plot
+      data={data}
+      layout={layout}
+      config={{ responsive: true, ...config }}
+      style={{ width: "100%", ...style }}
+      useResizeHandler
+      onClick={onClick}
+    />
+  );
 }
