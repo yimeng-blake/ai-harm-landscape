@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import PlotlyChart from "../../components/PlotlyChart";
 import TaxonomyBreakdown, { TaxonomyTab } from "../../components/TaxonomyBreakdown";
 import WordCloud, { extractWords } from "../../components/WordCloud";
-import { fetchJSON, TimelineRow, Incident } from "../../lib/data";
+import { fetchJSON, Incident } from "../../lib/data";
 import { CATEGORY_COLORS, DONUT_PALETTE, HOVERLABEL } from "../../lib/constants";
 
 // Map taxonomy tab to the field used for grouping
@@ -53,10 +53,16 @@ export default function TimelinePage() {
     // Group by month + category
     const grouped: Record<string, Record<string, number>> = {};
     filteredIncidents.forEach((inc) => {
-      let rawVal = inc[field] as string | null;
-      if (!rawVal) rawVal = "Unclassified";
-      const val = rawVal.split(",")[0].trim();
-      const label = cleanLabel(val);
+      const rawVal = inc[field] as string | null;
+      let label: string;
+      if (!rawVal) {
+        label = "Unclassified";
+      } else if (taxonomyTab === "GMF") {
+        // GMF values are real comma-separated lists; MIT/CSET labels contain commas inside the label
+        label = cleanLabel(rawVal.split(",")[0].trim());
+      } else {
+        label = cleanLabel(rawVal);
+      }
       if (!showUnclassified && label === "Unclassified") return;
       if (!grouped[label]) grouped[label] = {};
       const monthKey = `${inc.year}-${String(inc.month).padStart(2, "0")}`;

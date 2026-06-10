@@ -16,7 +16,7 @@ export default function Home() {
   const total = incidents.length;
   const recent = incidents.filter((i) => i.year >= 2023).length;
   const pctRecent = ((recent / total) * 100).toFixed(0);
-  const uniqueDevs = new Set(incidents.flatMap((i) => i.developers)).size;
+  const uniqueDevs = new Set(incidents.flatMap((i) => [...i.deployers, ...i.developers])).size;
 
   // Sparkline data
   const yearCounts: Record<number, number> = {};

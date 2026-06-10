@@ -37,7 +37,7 @@ export default function NetworkPage() {
     incidents.forEach((inc) => {
       const cat = inc.risk_category;
       if (!cat || cat === "Unclassified") return;
-      [...inc.deployers, ...inc.developers].forEach((e) => {
+      [...inc.deployers, ...inc.developers, ...inc.harmed_parties].forEach((e) => {
         if (!map[e]) map[e] = new Set();
         map[e].add(cat);
       });
@@ -123,7 +123,7 @@ export default function NetworkPage() {
   const labelThreshold = Math.max(minIncidents + 3, 8);
 
   // Community legend (only show communities present in filtered nodes)
-  const visibleCommunities = [...new Set(filteredNodes.map((n) => n.community))].filter((c) => c !== -1).sort();
+  const visibleCommunities = [...new Set(filteredNodes.map((n) => n.community))].filter((c) => c !== -1).sort((a, b) => a - b);
   const communityLabelMap: Record<number, string> = {};
   filteredNodes.forEach((n) => {
     if (n.community >= 0 && !communityLabelMap[n.community]) {
@@ -141,7 +141,10 @@ export default function NetworkPage() {
 
   // Entity incidents for detail panel
   const entityIncidents = selectedEntity
-    ? incidents.filter((i) => i.deployers.includes(selectedEntity) || i.developers.includes(selectedEntity))
+    ? incidents.filter((i) =>
+        i.deployers.includes(selectedEntity) ||
+        i.developers.includes(selectedEntity) ||
+        i.harmed_parties.includes(selectedEntity))
     : [];
   const selectableNodes = [...filteredNodes].sort((a, b) => b.count - a.count).slice(0, 25);
 

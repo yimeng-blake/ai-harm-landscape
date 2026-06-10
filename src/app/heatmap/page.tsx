@@ -46,9 +46,9 @@ export default function HeatmapPage() {
   return (
     <div className="max-w-6xl">
       <p className="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-1">🗂️ Harm Matrix</p>
-      <h1 className="text-3xl font-bold mb-2">AI harm concentrates in a few technology–risk pairs</h1>
+      <h1 className="text-3xl font-bold mb-2">AI harm concentrates in a few deployment sectors</h1>
       <p className="text-gray-400 mb-6">
-        Which risk categories intersect with which AI technologies? Darker cells = more incidents.
+        Which CSET deployment sectors are classified as harm-present, harm-absent, or uncertain? Darker cells = more incidents.
       </p>
 
       <label className="text-sm text-gray-400 mb-4 block">

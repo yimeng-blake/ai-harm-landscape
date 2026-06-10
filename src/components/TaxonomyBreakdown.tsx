@@ -8,15 +8,17 @@ interface Props {
   incidents: Incident[];
 }
 
-type Tab = "MIT" | "GMF" | "CSET";
 
-function countField(incidents: Incident[], field: keyof Incident, topN = 10): { labels: string[]; values: number[] } {
+
+function countField(incidents: Incident[], field: keyof Incident, topN = 10, splitCommas = false): { labels: string[]; values: number[] } {
   const counts: Record<string, number> = {};
   incidents.forEach((inc) => {
     const val = inc[field];
     if (!val || val === "Unclassified") return;
-    // Handle comma-separated multi-value fields
-    const items = typeof val === "string" ? val.split(",").map((s) => s.trim()) : [String(val)];
+    // Only GMF fields are true comma-separated lists; MIT/CSET labels have commas inside them
+    const items = splitCommas && typeof val === "string"
+      ? val.split(",").map((s) => s.trim())
+      : [String(val)];
     items.forEach((item) => {
       if (item) counts[item] = (counts[item] || 0) + 1;
     });
@@ -38,13 +40,12 @@ function cleanDomainName(name: string): string {
   return name.replace(/^\d+\.\s*/, "");
 }
 
-function DonutChart({ labels, values, title, colors, height = 260, onClick }: {
+function DonutChart({ labels, values, title, colors, height = 260 }: {
   labels: string[];
   values: number[];
   title: string;
   colors?: string[];
   height?: number;
-  onClick?: (label: string) => void;
 }) {
   const total = values.reduce((s, v) => s + v, 0);
   return (
@@ -146,8 +147,8 @@ function MITTab({ incidents }: Props) {
 }
 
 function GMFTab({ incidents }: Props) {
-  const goalData = countField(incidents, "Known AI Goal" as keyof Incident, 10);
-  const failureData = countField(incidents, "Known AI Technical Failure" as keyof Incident, 8);
+  const goalData = countField(incidents, "Known AI Goal" as keyof Incident, 10, true);
+  const failureData = countField(incidents, "Known AI Technical Failure" as keyof Incident, 8, true);
   const coverage = incidents.filter((i) => i["Known AI Goal"]).length;
 
   return (

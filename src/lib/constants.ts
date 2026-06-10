@@ -32,27 +32,16 @@ export const TOPIC_COLORS: string[] = [
 ];
 
 // RISK CATEGORIES: Okabe-Ito, stable across timeline / network filter / topics filter.
+// Keys must match the exact risk_category strings in incidents.json.
 export const CATEGORY_COLORS: Record<string, string> = {
   "Discrimination and Toxicity": "#D55E00",
   "AI system safety, failures, and limitations": "#0072B2",
-  "Privacy and Security": "#009E73",
-  "Malicious Actors and Misuse": "#CC79A7",
-  "Socioeconomic and Environmental Harms": "#E69F00",
-  "Misinformation and Disinformation": "#56B4E9",
-  "Human Autonomy and Oversight": "#F0E442",
-  "Unclassified": NEUTRAL,
-};
-
-// Same concepts, alternate label spellings used by the MIT taxonomy view —
-// mapped to the SAME hue per concept for cross-page consistency.
-export const MIT_DOMAIN_COLORS: Record<string, string> = {
-  "Malicious Actors & Misuse": "#CC79A7",
-  "AI system safety, failures, and limitations": "#0072B2",
-  "Discrimination and Toxicity": "#D55E00",
-  "Misinformation": "#56B4E9",
   "Privacy & Security": "#009E73",
-  "Human-Computer Interaction": "#F0E442",
+  "Malicious Actors & Misuse": "#CC79A7",
   "Socioeconomic & Environmental Harms": "#E69F00",
+  "Misinformation": "#56B4E9",
+  "Human-Computer Interaction": "#F0E442",
+  "Unclassified": NEUTRAL,
 };
 
 // Fallback for taxonomy donuts — same family as risk categories.
